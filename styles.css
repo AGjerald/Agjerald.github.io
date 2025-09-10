@@ -124,7 +124,7 @@ body{
   position:relative;
 }
 .hero__media img{
-  width:100%; height:auto; display:block;
+  width:70%; height:auto; display:block;
   /*border-radius: 0px; filter: grayscale(.9) contrast(1.05);*/
   border:0px solid var(--line);
 }
@@ -148,7 +148,7 @@ body{
   padding: 24px;
 }
 .card h2{
-  margin:0 0 14px; font-size: 22px; color:#fff; position:relative;
+  margin:0 0 14px; font-size: 32px; color:#fff; position:relative;
 }
 .card h2::before{
   content:""; position:absolute; left:0; bottom:-8px; width:44px; height:3px;
@@ -159,8 +159,9 @@ body{
 .about p{ 
   text-align: center;
   color: var(--muted); 
-  max-width: 800px;   /* adjust width as you like */
+  max-width: 1200px;   /* adjust width as you like */
   margin: 0 auto;     /* centers it horizontally */
+  font-size: clamp(1rem, 2vw + 1rem, 2.5rem);
 }
 
 /* ===== Skills ===== */
@@ -181,7 +182,14 @@ body{
   border-radius: 16px;
   min-height: 92px;
 }
-.skill__icon{ font-size: 22px }
+.skill__icon{ 
+  font-size: 22px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 8px;
+  vertical-align: middle;
+ }
 .skill span:last-child{ font-weight:600 }
 
 /* ===== Portfolio ===== */
@@ -199,39 +207,79 @@ body{
   border:1px solid var(--line);
 }
 .shot img{
-  width:100%; height:100%; object-fit:cover; display:block;
+  width: 100%; height: 100%; object-fit:cover; display:block;
   aspect-ratio: 1 / 1;
   filter:saturate(.85);
 }
-.shot__badge{
-  position:absolute; left:10px; bottom:10px;
-  background: rgba(24,24,24,.8);
-  padding:6px 10px; border-radius:8px;
-  border:1px solid rgba(240,178,58,.5);
-  color:var(--accent); font-weight:700; font-size:12px;
+.shot__badge {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background: rgba(24, 24, 24, .8);
+  padding: clamp(4px, 1vw, 8px) clamp(6px, 1.5vw, 12px); 
+  border-radius: 8px;
+  border: 1px solid rgba(240, 178, 58, .5);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: clamp(10px, 1.2vw, 16px);
 }
 .center{ text-align:center; margin-top:12px }
 
 /* ===== Experience ===== */
-.experience{ padding-top: 20px }
+.experience { padding-top: 16px }
+
+/* container */
 .xp{
-  display:grid; grid-template-columns: 64px 1fr; gap:16px; position:relative;
-  padding-left: 6px; margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 16px;
+  position: relative;
+  padding-left: 6px;
+  padding-top: 28px;   /* space for dot + year */
+  margin-bottom: 28px;
 }
+
+/* vertical line */
 .xp::before{
-  content:""; position:absolute; left:32px; top:6px; bottom:-6px;
-  width:2px; background: var(--line);
+  content:"";
+  position:absolute;
+  left:32px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background: var(--line);
 }
+
+/* dot */
+.xp::after{
+  content:"";
+  position:absolute;
+  left:32px;
+  top:0;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background: var(--accent);
+  border:2px solid #111519;
+  transform: translate(-50%, 0);
+}
+
+/* year centered on the line, under the dot */
 .xp__year{
-  color:#fff; font-weight:800; position:relative; margin-top:4px;
+  position:absolute;
+  left:32px;
+  top:14px;                 /* tweak to taste */
+  transform: translateX(-50%);
+  color:#fff;
+  font-weight:800;
+  text-align:center;
+  line-height:1;
 }
-.xp__year::after{
-  content:""; position:absolute; left:32px; top:6px;
-  width:10px; height:10px; border-radius:50%;
-  background: var(--accent); border:2px solid #111519;
-  transform: translate(-50%, -50%);
+
+/* KEY: keep text in the right column */
+.xp__body{
+  grid-column: 2;
 }
-.xp__body h3{ margin:0 0 4px; font-size:18px }
 .xp__meta{ margin:0 0 6px; color:var(--muted); font-weight:600 }
 .xp__body p{ margin:0; color:var(--muted) }
 
