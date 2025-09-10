@@ -14,20 +14,11 @@
   <div class="page">
     <!-- TOPP-NAV -->
     <header class="site-header">
-      <a class="brand" href="#">
-        <span class="brand-mark">AFG</span>
-      </a>
       <nav class="nav">
         <a href="#about">About</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
       </nav>
-      <form class="search" role="search" aria-label="Site search">
-        <input type="search" placeholder="Search" />
-        <button type="submit" aria-label="Search">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 1 0-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
-        </button>
-      </form>
     </header>
 
     <!-- GRID: venstre hovedkolonne + høyre sidebar (stacker på mobil) -->
@@ -46,7 +37,7 @@
           </div>
           <div class="hero__media" aria-hidden="true">
             <!-- Bytt ut src med ditt eget portrett -->
-            <img src="portrett_andersfg.png" alt="Portrett Anders Finnebråten Gjerald" />
+            <img src="portrett_andersfg_bw.png" alt="Portrett Anders Finnebråten Gjerald" />
             <ul class="social">
               <li><a href="#" aria-label="Twitter">t</a></li>
               <li><a href="#" aria-label="LinkedIn">in</a></li>
@@ -60,8 +51,7 @@
           <h2>About</h2>
           <p>
             I have acquired and sharpened my craft on teams delivering data-driven products.
-            I enjoy building fast backends, clean APIs and dependable automations. Passionate
-            about community and mentoring. Currently open to roles where I can help an org grow.
+            I enjoy building fast backends, clean APIs and dependable automations. 
           </p>
         </section>
 
@@ -70,11 +60,21 @@
           <h2>My Skills</h2>
           <ul class="skill-grid" role="list">
             <!-- Ett kort = <li>  -->
-            <li class="skill"><span class="skill__icon">🐍</span><span>Python</span></li>
-            <li class="skill"><span class="skill__icon">🍃</span><span>Figma</span></li>
-            <li class="skill"><span class="skill__icon">🌐</span><span>HTML & CSS</span></li>
-            <li class="skill"><span class="skill__icon">📜</span><span>JavaScript</span></li>
-            <li class="skill"><span class="skill__icon">🐬</span><span>MySQL</span></li>
+            <li class="skill">
+            <img class="skill__icon" src="images/python-removebg-preview.png" alt="Python logo"><span>Python</span>
+            </li>
+            <li class="skill">
+              <img class="skill__icon" src="images/Figma-logo.svg.png" alt="Figma logo"><span>Figma</span>
+            </li>
+            <li class="skill">
+              <img class="skill__icon" src="images/CSS3_and_HTML5_logos_and_wordmarks.svg.png" alt="HTML and CSS logo"></span><span>HTML, CSS and Javascript</span>
+            </li>
+            <li class="skill">
+              <img class="skill__icon" src="images/JavaScript-Logo.png" alt="Javascript logo"></span><span>JavaScript</span>
+            </li>
+            <li class="skill">
+              <img class="skill__icon" src="images/sql_logo.png" alt="SQL logo"></span><span>SQL</span>
+            </li>
           </ul>
         </section>
       </section>
@@ -90,15 +90,26 @@
 
           <div class="portfolio__grid">
             <!-- Bytt ut bilder/titler etter behov -->
-            <a class="shot" href="#" aria-label="Amazon Scraper">
-              <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=900&auto=format&fit=crop" alt="Project cover" />
-              <span class="shot__badge">Amazon Scraper</span>
+            <a class="shot" href="project_springbrettet.html" aria-label="Springrettet - website">
+              <img src="images/S+logo+gjennomsiktig-05.webp" alt="Springbrettet logo" />
+              <span class="shot__badge">Springbrettet - Website</span>
             </a>
-            <a class="shot" href="#"><img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=900&auto=format&fit=crop" alt="" /></a>
-            <a class="shot" href="#"><img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=900&auto=format&fit=crop" alt="" /></a>
-            <a class="shot" href="#"><img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=900&auto=format&fit=crop" alt="" /></a>
-            <a class="shot" href="#"><img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?q=80&w=900&auto=format&fit=crop" alt="" /></a>
-            <a class="shot" href="#"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=900&auto=format&fit=crop" alt="" /></a>
+            <a class="shot" href="project_tunnelsyn.html">
+              <img src="images/tunnelsyn1.png" alt="Image inside Tunnelsyn, a museum installation" />
+              <span class="shot__badge">Tunnelsyn - Museum Installation</span>
+            </a>
+            <a class="shot" href="project_cue.html">
+              <img src="images/cue_pose.png" alt="Image of the prototype Cue" />
+              <span class="shot__badge">Cue - Webapplication prototype</span>
+            </a>
+            <a class="shot" href="project_kvikk.html">
+              <img src="images/kvikk_nettside.png" alt="Image of Kvikk insurance' homepage" />
+              <span class="shot__badge">Kvikk insurance - Website & App</span>
+            </a>
+            <a class="shot" href="project_veganbros.html">
+              <img src="images/vbvb.PNG" alt="" />
+              <span class="shot__badge">Veganbros - Website</span>
+            </a>
           </div>
 
           <div class="center">
@@ -108,58 +119,51 @@
 
         <!-- EXPERIENCE (tidslinje) -->
         <section class="card experience">
-          <h2>Experience</h2>
+          <h2>Education & experience</h2>
+
+          <article class="xp">
+            <div class="xp__year">2025</div>
+            <div class="xp__body">
+              <h3>Started mastersprogram in Informational Science</h3>
+              <p class="xp__meta">Bergen, Norway</p>
+              <p>
+                Started my mastersprogram within Informational Science with the intent on sharpening my skills in the broader spectre <br> of information technology, researching information systems, backend structure and human-computer interaction.
+              </p>
+            </div>
+          </article>
 
           <article class="xp">
             <div class="xp__year">2024</div>
             <div class="xp__body">
-              <h3>Senior Python Developer</h3>
-              <p class="xp__meta">Locotech, Toledo</p>
+              <h3>Completed B.A. in Media and Interactiondesign</h3>
+              <p class="xp__meta">Bergen, Norway</p>
               <p>
-                Built data pipelines, orchestrated ETL with Airflow, and delivered
-                APIs serving analytics dashboards. Mentored 4 devs. Improved cloud
-                costs by 22% via storage lifecycle rules and caching.
+                Bachelor’s degree in Media and Interaction Design from the University of Bergen, with a strong foundation in <br> 
+                human–computer interaction, user experience, and interaction design. The program provided hands-on experience <br> 
+                with diverse cases in workflow and design thinking, guiding projects from initial sketches through to functional <br> 
+                prototypes and finished products.
               </p>
             </div>
           </article>
-
-          <article class="xp">
+                    <article class="xp">
             <div class="xp__year">2021</div>
             <div class="xp__body">
-              <h3>Python Developer</h3>
-              <p class="xp__meta">AutoGrid Systems, Nepal</p>
+              <h3>Completed a year course in Media & Communication</h3>
+              <p class="xp__meta">Bergen, Norway</p>
               <p>
-                Implemented backend services around messaging, invoicing and auth.
-                Introduced typing & CI, reduced deployment incidents by half.
+                Finished a year course in Media and Communication at the University of Bergen. 
               </p>
             </div>
           </article>
-        </section>
-
-        <!-- TESTIMONIAL -->
-        <section class="card testimonial">
-          <h2>Testimonial</h2>
-          <div class="tst">
-            <div class="tst__img">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Client photo" />
-            </div>
-            <div class="tst__text">
-              <p class="quote">
-                “The design quality, flexibility and documentation are superb.
-                They delivered more than promised and helped us scale quickly.”
-              </p>
-              <p class="who">— Josef Sharma, COO, Onum</p>
-            </div>
-          </div>
         </section>
 
         <!-- CONTACT -->
         <section id="contact" class="card contact">
           <h2>Contact Me</h2>
           <ul class="contact__list" role="list">
-            <li><span class="tag">ivan@domain.com</span></li>
-            <li><span class="tag">+1 555 0124</span></li>
-            <li><span class="tag">Toledo, United States</span></li>
+            <li><span class="tag">andersgjerald@gmail.com</span></li>
+            <li><span class="tag">+47 46 89 84 59</span></li>
+            <li><span class="tag">Bergen, Norway</span></li>
           </ul>
 
           <div class="contact__social">
@@ -175,7 +179,7 @@
   </div>
 
   <footer class="tiny">
-    <p>© <span id="y"></span> Ivan Dan — All rights reserved.</p>
+    <p>© <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.</p>
   </footer>
 
   <script>
