@@ -92,7 +92,7 @@ body{
   overflow: hidden;
 
   /* background image */
-  background: url("images/group 9.png") no-repeat center center / cover;
+  background: url("images/heroimage.png") no-repeat center center / cover;
   
   border: 0px solid var(--line);
 }
@@ -322,4 +322,5 @@ body{
   max-width:1240px; margin: 12px auto 48px; text-align:center; color:#7e8697;
   font-size: 13px;
 }
+
 
