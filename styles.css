@@ -82,21 +82,24 @@ body{
 }
 
 /* ===== Hero ===== */
-.hero{
-  display:grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 24px;
-  align-items:center;
-  background: none;
-  border:0px solid var(--line);
-  border-radius: var(--radius);
+.hero {
+  display: flex;
+  flex-direction: column;   /* stack text + socials if you want */
+  justify-content:center;
+  min-height: 100vh;        /* full screen hero */
   padding: 28px;
-  position:relative;
-  overflow:hidden;
+  position: relative;
+  overflow: hidden;
+
+  /* background image */
+  background: url("images/group 9.png") no-repeat center center / cover;
+  
+  border: 0px solid var(--line);
 }
 @media (max-width: 720px){
   .hero{ grid-template-columns: 1fr }
 }
+
 .kicker{ letter-spacing:.1em; color:var(--muted); margin:0 0 8px }
 .hero h1{
   margin:0 0 6px; font-size: clamp(36px, 4.5vw, 56px);
@@ -124,7 +127,7 @@ body{
   position:relative;
 }
 .hero__media img{
-  width:70%; height:auto; display:block;
+  width:150%; height:auto; display:block;
   /*border-radius: 0px; filter: grayscale(.9) contrast(1.05);*/
   border:0px solid var(--line);
 }
@@ -157,11 +160,11 @@ body{
 
 /* About */
 .about p{ 
-  text-align: center;
+  text-align: left;
   color: var(--muted); 
   max-width: 1200px;   /* adjust width as you like */
   margin: 0 auto;     /* centers it horizontally */
-  font-size: clamp(1rem, 2vw + 1rem, 2.5rem);
+  font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
 }
 
 /* ===== Skills ===== */
@@ -319,3 +322,4 @@ body{
   max-width:1240px; margin: 12px auto 48px; text-align:center; color:#7e8697;
   font-size: 13px;
 }
+
