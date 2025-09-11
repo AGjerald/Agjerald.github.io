@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
   const cards = document.querySelectorAll('.stack-card');
   const offset = container.getBoundingClientRect().top;
   // For example: when user scrolls so container hits top, make top card sticky
-  if (offset < someThreshold) {
+  if (offset < 100) {
     cards[0].classList.add('sticky');
     // maybe also shift other cards
   } else {
