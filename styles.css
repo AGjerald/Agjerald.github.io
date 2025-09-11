@@ -36,7 +36,7 @@ body{
   display:flex;
   align-items:center;
   gap:24px;
-  margin-bottom: 0px;
+  margin-bottom: 28px;
 }
 
 .nav{ display:flex; gap:18px; margin-left:auto }
@@ -298,6 +298,7 @@ body{
   max-width:1240px; margin: 12px auto 48px; text-align:center; color:#7e8697;
   font-size: 13px;
 }
+
 
 
 
