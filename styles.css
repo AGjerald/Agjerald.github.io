@@ -36,39 +36,14 @@ body{
   display:flex;
   align-items:center;
   gap:24px;
-  margin-bottom: 28px;
+  margin-bottom: 0px;
 }
-.brand{
-  display:flex; align-items:center; text-decoration:none;
-}
-.brand-mark{
-  width:46px; height:46px; display:inline-grid; place-items:center;
-  border:1px solid rgba(240,178,58,.35);
-  border-radius:999px;
-  color: var(--accent);
-  font-weight:800;
-  letter-spacing:.5px;
-}
+
 .nav{ display:flex; gap:18px; margin-left:auto }
 .nav a{
   color:var(--muted); text-decoration:none; font-weight:600;
 }
 .nav a:hover{ color:var(--text) }
-
-.search{
-  position:relative; display:flex; align-items:center; gap:6px;
-  background: var(--panel);
-  border:1px solid var(--line);
-  padding:6px 8px; border-radius:10px;
-}
-.search input{
-  background:transparent; border:0; color:var(--text); outline:none;
-  width:140px;
-}
-.search button{
-  background:transparent; border:0; cursor:pointer;
-}
-.search svg{ width:18px; fill:var(--muted) }
 
 /* ===== Grid-layout (to kolonner på større skjermer) ===== */
 .grid{
@@ -323,6 +298,7 @@ body{
   max-width:1240px; margin: 12px auto 48px; text-align:center; color:#7e8697;
   font-size: 13px;
 }
+
 
 
 
