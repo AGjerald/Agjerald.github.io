@@ -278,48 +278,6 @@ body{
   text-align:center;
   line-height:1;
 }
-/*stacking cards*/
-.stack-container {
-  position: relative;
-  /* maybe padding / margin to allow cards to overlap visibly */
-}
-
-.stack-card {
-  position: relative;
-  width: 100%;
-  border: 1px solid #ccc; /* example */
-  border-top: 10px solid #333; /* thick top border for top card or all cards */
-  background: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  /* We'll offset lower cards */
-}
-
-.stack-card:nth-child(2) {
-  top: 20px;
-  z-index: 1;
-}
-
-.stack-card:nth-child(3) {
-  top: 40px;
-  z-index: 0;
-}
-
-/* maybe sticky for top card or for all until unstacked */
-.stack-card.sticky {
-  position: sticky;
-  top: 0;
-  /* adjustments for overlap etc */
-}
-
-/* transitions */
-.stack-card {
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.stack-card.hovered, .stack-card.active { /* maybe when hovered or active scroll state */
-  transform: translateY(-some‑value) scale(1);
-  z-index: 10;
-}
 
 
 /* KEY: keep text in the right column */
@@ -365,6 +323,7 @@ body{
   max-width:1240px; margin: 12px auto 48px; text-align:center; color:#7e8697;
   font-size: 13px;
 }
+
 
 
 
