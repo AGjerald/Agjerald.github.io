@@ -102,14 +102,27 @@ body{
 .hero .accent{ color: var(--accent) }
 .role{ color: var(--muted); margin:.25rem 0 1rem; font-weight:500 }
 
-.btn{
+.btn {
   display: inline-block;
   background: none;
-  color: var(--accent); text-decoration:none; font-weight:700;
-  padding: 10px 16px; 
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 16px;
   border-radius: 10px;
-  box-shadow: none;
   border: 1px solid;
+  cursor: pointer;
+  transition: all 0.2s ease; /* smooth animation */
+}
+.btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);  /* lift slightly */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.btn:active {
+  transform: translateY(1px);  /* press down */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 .btn--ghost{
   background: transparent; color: var(--accent);
@@ -459,3 +472,4 @@ a:focus {
   color: var(--biaccent);   /* darker on hover */
   text-decoration: underline; /* show underline on hover */
 }
+
