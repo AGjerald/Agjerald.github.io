@@ -1,26 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project | Tunnelsyn - Museum installation</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anders Finnebråten Gjerald - Interaksjonsdesigner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+  <!-- Koble til separat CSS-fil -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="project_springbrettet.html" class="active">Projects</a></li>
-            </ul>
-        </nav>
+  <!-- YTTERKANT / RAMME -->
+  <div class="page">
+    <!-- TOPP-NAV -->
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="#about">About me</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
-    <main>
-        <h1>Tunnelsyn - Museum installation</h1>
-        <!-- Add your contact form or information here -->
+    <main class="grid">
+        <section class="hero" 
+            style="--hero-image: url('images/tunnelsyn1.png'); --hero-opacity:0.8;">
+            <h1 class="hero_inset"><span class="accent">Project</span> | Tunnelsyn - Museum Installation</h1>
+            <ul class="project_tools" aria-label="Technologies used" role="list" style="padding-left: 5vw">
+                <li>Figma</li>
+                <li>Python</li>
+                <li>Raspberry Pi</li>
+            </ul>
+        </section>
+
+        <section id="project_site" class="project_site card">
+            <h2>The project</h2>
+            <p> <i>"Tunnelsyn"</i> was a large-scale group project completed as part of my final bachelor’s exam in Media and Interaction Design. Tunnelsyn was one out of five intallments that was part of the exhibition <a href="https://www.universitetsmuseet.no/nb/utstilling/528/ambivalent-intelligens" target="_blank" rel="noopener noreferrer"><i>"Ambivalent Intelligence"</i></a>.
+                Tunnelsyn is an installation designed to immerse visitors in the world of news media shaped by AI. It featured multiple screens, each powered by a Raspberry Pi and an ultrasonic sensor. As visitors passed by, the sensors triggered the Raspberry Pi to change the content displayed on the screens, creating an interactive experience.
+                In the group we divided the roles roughly between physical design and digital design, whereas I had the project lead.
+            </p>
+            <p>
+                The thought behind the exhibition is to showcase the many positive and negative sides with artificial intelligence, and its influence on our society. Tunnelsyn is in short terms an intallment meant to shed light on the up and coming image- and video generative AI tools. 
+                With this project we wanted to showcase both the fasciniating and problematic side of this technology, as it permeates our lives through all sorts of media. 
+            </p>
+            <p>As part of the build up to this projects we teamed up with an established project in the field, called <a href="https://mediacitybergen.no/reynir/" target="_blank" rel="noopener noreferrer"><i>"Reynir".</i></a>
+               Through Project Reynir we got insights in past, current and future issues in the field of image/video generetive AI in the media- and news field - especailly focusing on misinformation. Our installation wanted to showcase the issues we may encounter because of this new technology, but we also wanted to introduce some solutions — enter Reynir. 
+            </p>
+            <p>
+
+            </p>
+            <p>Learn more about the installation  <a href="https://teklab.uib.no/artikler/tunnelsyn/" target="_blank" rel="noopener noreferrer">here!</a></p>
+        </section>
+
+    <section id="project_site" class="project_site card">
+    <h2>The making of Tunnelsyn</h2>
+
+    <div class="slideshow" aria-label="Project screenshots">
+        <div class="slides" data-index="0">
+        <figure class="slide">
+            <img src="images/tunnelsyn_storyboard2.0.jpg" alt="Landingpage with hero and CTA" loading="lazy">
+            <figcaption>Early storyboard of Tunnelsyn.</figcaption>
+        </figure>
+
+        <figure class="slide">
+            <img src="images/tunnelsyn_prod.jpg" alt="About page layout with timeline" loading="lazy">
+            <figcaption>Production of the physical installment in Bergen University Museum.</figcaption>
+        </figure>
+
+        <figure class="slide">
+            <img src="images/tunnelsyn_3.jpg" alt="Contact form and map embed" loading="lazy">
+            <figcaption>Refined and finished installment with all screens and sensors active.</figcaption>
+        </figure>
+
+        <figure class="slide">
+            <img src="images/Tunnelsyn_2.jpg" alt="Contact form and map embed" loading="lazy">
+            <figcaption>A look inside the installment showcasing all screens.</figcaption>
+        </figure>
+        </div>
+        
+
+        <button class="nav prev" aria-label="Previous slide">‹</button>
+        <button class="nav next" aria-label="Next slide">›</button>
+
+        <div class="dots" role="tablist" aria-label="Slide navigation">
+        <button role="tab" aria-selected="true" tabindex="0" aria-controls="slide-1"></button>
+        <button role="tab" aria-selected="false" tabindex="-1" aria-controls="slide-2"></button>
+        <button role="tab" aria-selected="false" tabindex="-1" aria-controls="slide-3"></button>
+        </div>
+    </div>
+    </section>
+
+
     </main>
-    <footer>
-        <p>&copy; 2025 Portfolio Host. All rights reserved.</p>
+    <footer class="tiny">
+        <p>© <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.</p>
     </footer>
+
+    <script>
+        (function initSlideshow(root = document.querySelector('#project_site .slideshow')) {
+        if (!root) return;
+
+        const track = root.querySelector('.slides');
+        const slides = [...root.querySelectorAll('.slide')];
+        const prevBtn = root.querySelector('.prev');
+        const nextBtn = root.querySelector('.next');
+        const dotsWrap = root.querySelector('.dots');
+
+        // Lag dots dynamisk basert på faktiske slides
+        dotsWrap.innerHTML = '';
+        const dots = slides.map((_, i) => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.setAttribute('role', 'tab');
+            b.setAttribute('aria-controls', `slide-${i+1}`);
+            b.tabIndex = i === 0 ? 0 : -1;
+            b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+            dotsWrap.appendChild(b);
+            return b;
+        });
+
+        let index = 0;
+        const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+        const setIndex = (i, {focusDot=false} = {}) => {
+            index = clamp(i, 0, slides.length - 1);
+            track.style.transform = `translateX(${-index * 100}%)`;
+            dots.forEach((d, idx) => {
+            const sel = idx === index;
+            d.setAttribute('aria-selected', sel ? 'true' : 'false');
+            d.tabIndex = sel ? 0 : -1;
+            if (sel && focusDot) d.focus();
+            });
+        };
+
+        prevBtn.addEventListener('click', () => setIndex(index - 1, {focusDot:true}));
+        nextBtn.addEventListener('click', () => setIndex(index + 1, {focusDot:true}));
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => setIndex(i, {focusDot:true}));
+            dot.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') setIndex(i + 1, {focusDot:true});
+            if (e.key === 'ArrowLeft')  setIndex(i - 1, {focusDot:true});
+            });
+        });
+
+        // Swipe
+        let startX = null, lastX = null, isDragging = false;
+        const start = (x) => { startX = lastX = x; isDragging = true; track.style.transition = 'none'; };
+        const move  = (x) => { if (!isDragging) return; lastX = x; const dx = x - startX; track.style.transform = `translateX(${(-index*100) + (dx / root.clientWidth)*100}%)`; };
+        const end   = () => {
+            if (!isDragging) return;
+            const dx = lastX - startX;
+            track.style.transition = '';
+            if (Math.abs(dx) > root.clientWidth * 0.2) setIndex(index + (dx < 0 ? 1 : -1));
+            else setIndex(index);
+            isDragging = false; startX = lastX = null;
+        };
+
+        track.addEventListener('pointerdown', e => { track.setPointerCapture(e.pointerId); start(e.clientX); });
+        track.addEventListener('pointermove', e => move(e.clientX));
+        track.addEventListener('pointerup', end);
+        track.addEventListener('pointercancel', end);
+        track.addEventListener('pointerleave', () => isDragging && end());
+
+        setIndex(0);
+        })();
+    </script>
 </body>
 </html>
