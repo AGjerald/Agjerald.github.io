@@ -47,6 +47,26 @@ body{
 }
 .nav a:hover{ color:var(--text) }
 
+.lang-toggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.lang-toggle button {
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-toggle button:hover {
+  background: var(--accent);
+  color: #fff;
+}
 
 /* ===== Grid-layout (to kolonner på større skjermer) ===== */
 .grid{
@@ -472,6 +492,7 @@ a:focus {
   color: var(--biaccent);   /* darker on hover */
   text-decoration: underline; /* show underline on hover */
 }
+
 
 
 
