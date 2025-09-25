@@ -6,7 +6,7 @@
 
     // Change button label
     document.getElementById("lang-btn").textContent =
-      currentLang === "en" ? "Norsk" : "English";
+      currentLang === "en" ? "Norwegian" : "English";
 
     // Translate all elements with data-en/data-no
     document.querySelectorAll("[data-en]").forEach(el => {
