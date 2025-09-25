@@ -151,7 +151,7 @@ body{
   background: var(--accent);
   color: #ffff;
   transform: translateY(-2px);  /* lift slightly */
-  box-shadow: 0 4px 10px;
+  /*box-shadow: 0 4px 10px;*/
 }
 .btn:active {
   transform: translateY(1px);  /* press down */
@@ -505,6 +505,7 @@ a:focus {
   color: var(--biaccent);   /* darker on hover */
   text-decoration: underline; /* show underline on hover */
 }
+
 
 
 
