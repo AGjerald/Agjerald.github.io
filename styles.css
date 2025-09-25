@@ -116,7 +116,7 @@ body{
 }
 .btn:hover {
   background: var(--accent);
-  color: #fff;
+  
   transform: translateY(-2px);  /* lift slightly */
   box-shadow: 0 4px 10px;
 }
@@ -472,6 +472,7 @@ a:focus {
   color: var(--biaccent);   /* darker on hover */
   text-decoration: underline; /* show underline on hover */
 }
+
 
 
 
