@@ -7,158 +7,114 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
-  <!-- Koble til separat CSS-fil -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- YTTERKANT / RAMME -->
   <div class="page">
     <!-- TOPP-NAV -->
-      <header class="site-header" id="site-header">
-        <div class="lang-toggle">
-          <button id="lang-btn">Norsk</button>
-        </div>
-        <nav class="nav">
-          <a href="#about"     data-en="About"     data-no="Om meg">About</a>
-          <a href="#portfolio" data-en="Portfolio" data-no="Portefølje">Portfolio</a>
-          <a href="#contact"   data-en="Contact"   data-no="Kontakt">Contact</a>
-        </nav>
-      </header>
+    <header class="site-header" id="site-header">
+      <div class="lang-toggle">
+        <button id="lang-btn" data-en="Norsk" data-no="English">Norsk</button>
+      </div>
+      <nav class="nav">
+        <a href="#about"     data-en="About"     data-no="Om meg">About</a>
+        <a href="#portfolio" data-en="Portfolio" data-no="Portefølje">Portfolio</a>
+        <a href="#contact"   data-en="Contact"   data-no="Kontakt">Contact</a>
+      </nav>
+    </header>
+
     <main class="grid">
-        <section class="hero" 
-            style="--hero-image: url('images/kvikk_nettside.png'); --hero-opacity:0.8;">
-            <h1 class="hero_inset"><span class="accent">Project</span> | Kvikk Insurance - App and website</h1>
-            <ul class="project_tools" aria-label="Technologies used" role="list" style="padding-left: 5vw">
-                <li>Webflow</li>
-                <li>Figma</li>
-            </ul>
-        </section>
+      <!-- HERO -->
+      <section class="hero" style="--hero-image: url('images/kvikk_nettside.png'); --hero-opacity:0.8;">
+        <h1 class="hero_inset"
+            data-en="Project | Kvikk Insurance — App and website"
+            data-no="Prosjekt | Kvikk Insurance — App og nettside">
+          Project | Kvikk Insurance — App and website
+        </h1>
+        <ul class="project_tools" aria-label="Technologies used" style="padding-left: 5vw">
+          <li data-en="Webflow" data-no="Webflow">Webflow</li>
+          <li data-en="Figma"   data-no="Figma">Figma</li>
+        </ul>
+      </section>
 
-        <section id="project_site" class="project_site card">
-            <h2>The project</h2>
-            <p> <i>Kvikk Insurance</i> is an on-demand insurance start-up. During its rebranding phase, I had the opportunity to contribute to both app and web design. Together with the CEO, I worked on redesigning the user experience and visual identity of the app in Figma, resulting in a viable MVP to present to investors and stakeholders.
-            </p>
-            <p>
-                Later on I again got the opportunity to redesign their website to meet the newly adapted visual identity of the app. They utilized the website builder "Webflow" to design and host the site. 
-            </p>
-            <p>Check out the website <a href="https://www.kvikkforsikring.no/" target="_blank" rel="noopener noreferrer">here!</a></p>
-        </section>
+      <!-- INTRO -->
+      <section id="project_intro" class="project_site card">
+        <h2 data-en="The project" data-no="Prosjektet">The project</h2>
 
-    <section id="project_site" class="project_site card">
-    <h2>Snippets from the app and website</h2>
+        <p data-html
+           data-en='<i>Kvikk Insurance</i> is an on-demand insurance start-up. During its rebranding phase, I had the opportunity to contribute to both app and web design. Together with the CEO, I worked on redesigning the user experience and visual identity of the app in Figma, resulting in a viable MVP to present to investors and stakeholders.' 
+           data-no='<i>Kvikk Insurance</i> er en on-demand forsikringsstart-up. I deres rebranding-fase fikk jeg bidra til både app- og webdesign. Sammen med daglig leder redesignet jeg brukeropplevelsen og den visuelle identiteten i Figma, noe som resulterte i en fungerende MVP til investorer og interessenter.'>
+          <i>Kvikk Insurance</i> is an on-demand insurance start-up…
+        </p>
 
-    <div class="slideshow" aria-label="Project screenshots">
-        <div class="slides" data-index="0">
-        <figure class="slide">
-            <img src="images/k_app1.svg" alt="Landingpage with hero and CTA" loading="lazy">
-            <figcaption>Kvikk App</figcaption>
-        </figure>
+        <p data-html
+           data-en='Later on I again got the opportunity to redesign their website to meet the newly adopted visual identity of the app. They used the website builder “Webflow” to design and host the site.' 
+           data-no='Senere fikk jeg på nytt muligheten til å redesigne nettsiden i tråd med den oppdaterte visuelle identiteten fra appen. De brukte nettstedbyggeren «Webflow» til å designe og hoste siden.'>
+          Later on I again got the opportunity…
+        </p>
 
-        <figure class="slide">
-            <img src="images/k_app2.svg" alt="About page layout with timeline" loading="lazy">
-            <figcaption>Kvikk App</figcaption>
-        </figure>
+        <p>
+          <span data-en="Check out the website" data-no="Se nettsiden her">Check out the website</span>
+          <a href="https://www.kvikkforsikring.no/" target="_blank" rel="noopener noreferrer"
+             data-en="here!" data-no="her!">here!</a>
+        </p>
+      </section>
 
-        <figure class="slide">
-            <img src="images/kn3.png" alt="Contact form and map embed" loading="lazy">
-            <figcaption>Kvikk website landing page.</figcaption>
-        </figure>
+      <!-- SNIPPETS / SLIDESHOW -->
+      <section id="project_snippets" class="project_site card">
+        <h2 id="snippets-title"
+            data-en="Snippets from the app and website"
+            data-no="Utdrag fra app og nettside">
+          Snippets from the app and website
+        </h2>
 
-        <figure class="slide">
-            <img src="images/kn1.png" alt="Contact form and map embed" loading="lazy">
-            <figcaption>Kvikk website.</figcaption>
-        </figure>
+        <div class="slideshow" role="region" aria-labelledby="snippets-title" aria-label="Project screenshots">
+          <div class="slides" data-index="0">
+            <figure class="slide">
+              <img src="images/k_app1.svg" alt="Kvikk App screen 1" loading="lazy">
+              <figcaption data-en="Kvikk App" data-no="Kvikk-appen">Kvikk App</figcaption>
+            </figure>
+
+            <figure class="slide">
+              <img src="images/k_app2.svg" alt="Kvikk App screen 2" loading="lazy">
+              <figcaption data-en="Kvikk App" data-no="Kvikk-appen">Kvikk App</figcaption>
+            </figure>
+
+            <figure class="slide">
+              <img src="images/kn3.png" alt="Kvikk website landing page" loading="lazy">
+              <figcaption data-en="Kvikk website landing page" data-no="Kvikk nettside — landingsside">
+                Kvikk website landing page.
+              </figcaption>
+            </figure>
+
+            <figure class="slide">
+              <img src="images/kn1.png" alt="Kvikk website inner page" loading="lazy">
+              <figcaption data-en="Kvikk website" data-no="Kvikk nettside">Kvikk website.</figcaption>
+            </figure>
+          </div>
+
+          <button class="nav prev" aria-label="Previous slide">‹</button>
+          <button class="nav next" aria-label="Next slide">›</button>
+
+          <!-- La JS bygge dottene dynamisk -->
+          <div class="dots" role="tablist" aria-label="Slide navigation"></div>
         </div>
-        
-
-        <button class="nav prev" aria-label="Previous slide">‹</button>
-        <button class="nav next" aria-label="Next slide">›</button>
-
-        <div class="dots" role="tablist" aria-label="Slide navigation">
-        <button role="tab" aria-selected="true" tabindex="0" aria-controls="slide-1"></button>
-        <button role="tab" aria-selected="false" tabindex="-1" aria-controls="slide-2"></button>
-        <button role="tab" aria-selected="false" tabindex="-1" aria-controls="slide-3"></button>
-        </div>
-    </div>
-    </section>
-
-
+      </section>
     </main>
+
     <footer class="tiny">
-        <p>© <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.</p>
+      <p data-en="© Anders Finnebråten Gjerald — All rights reserved."
+         data-no="© Anders Finnebråten Gjerald — Alle rettigheter reservert.">
+        © <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.
+      </p>
     </footer>
+  </div>
 
-    <script>
-        (function initSlideshow(root = document.querySelector('#project_site .slideshow')) {
-        if (!root) return;
-
-        const track = root.querySelector('.slides');
-        const slides = [...root.querySelectorAll('.slide')];
-        const prevBtn = root.querySelector('.prev');
-        const nextBtn = root.querySelector('.next');
-        const dotsWrap = root.querySelector('.dots');
-
-        // Lag dots dynamisk basert på faktiske slides
-        dotsWrap.innerHTML = '';
-        const dots = slides.map((_, i) => {
-            const b = document.createElement('button');
-            b.type = 'button';
-            b.setAttribute('role', 'tab');
-            b.setAttribute('aria-controls', `slide-${i+1}`);
-            b.tabIndex = i === 0 ? 0 : -1;
-            b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-            dotsWrap.appendChild(b);
-            return b;
-        });
-
-        let index = 0;
-        const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
-        const setIndex = (i, {focusDot=false} = {}) => {
-            index = clamp(i, 0, slides.length - 1);
-            track.style.transform = `translateX(${-index * 100}%)`;
-            dots.forEach((d, idx) => {
-            const sel = idx === index;
-            d.setAttribute('aria-selected', sel ? 'true' : 'false');
-            d.tabIndex = sel ? 0 : -1;
-            if (sel && focusDot) d.focus();
-            });
-        };
-
-        prevBtn.addEventListener('click', () => setIndex(index - 1, {focusDot:true}));
-        nextBtn.addEventListener('click', () => setIndex(index + 1, {focusDot:true}));
-
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => setIndex(i, {focusDot:true}));
-            dot.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') setIndex(i + 1, {focusDot:true});
-            if (e.key === 'ArrowLeft')  setIndex(i - 1, {focusDot:true});
-            });
-        });
-
-        // Swipe
-        let startX = null, lastX = null, isDragging = false;
-        const start = (x) => { startX = lastX = x; isDragging = true; track.style.transition = 'none'; };
-        const move  = (x) => { if (!isDragging) return; lastX = x; const dx = x - startX; track.style.transform = `translateX(${(-index*100) + (dx / root.clientWidth)*100}%)`; };
-        const end   = () => {
-            if (!isDragging) return;
-            const dx = lastX - startX;
-            track.style.transition = '';
-            if (Math.abs(dx) > root.clientWidth * 0.2) setIndex(index + (dx < 0 ? 1 : -1));
-            else setIndex(index);
-            isDragging = false; startX = lastX = null;
-        };
-
-        track.addEventListener('pointerdown', e => { track.setPointerCapture(e.pointerId); start(e.clientX); });
-        track.addEventListener('pointermove', e => move(e.clientX));
-        track.addEventListener('pointerup', end);
-        track.addEventListener('pointercancel', end);
-        track.addEventListener('pointerleave', () => isDragging && end());
-
-        setIndex(0);
-        })();
-    </script>
+  <!-- Felles script som håndterer språkbytte, sticky header og slideshow-init -->
+  <script src="script.js" defer></script>
 </body>
 </html>
+
 
 
 
