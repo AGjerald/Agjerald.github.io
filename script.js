@@ -19,3 +19,20 @@ document.getElementById("lang-btn").addEventListener("click", () => {
 document.getElementById("contactBtn").addEventListener("click", () => {
   location.href = "mailto:andersgjerald@gmail.com";
 });
+
+let lastScroll = 0;
+const header = document.getElementById("site-header");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    // Scrolling down
+    header.classList.add("hide");
+  } else {
+    // Scrolling up
+    header.classList.remove("hide");
+  }
+
+  lastScroll = currentScroll;
+});
