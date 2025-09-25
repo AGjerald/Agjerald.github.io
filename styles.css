@@ -34,11 +34,24 @@ body{
 }
 
 /* ===== Toppnav ===== */
-.site-header{
-  display:flex;
-  align-items:center;
-  gap:24px;
-  margin-bottom: 28px;
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: white; /* or var(--surface) */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+
+  transition: transform 0.3s ease;
+}
+
+.site-header.hide {
+  transform: translateY(-100%);
 }
 
 .nav{ display:flex; gap:18px; margin-left:auto }
@@ -492,6 +505,7 @@ a:focus {
   color: var(--biaccent);   /* darker on hover */
   text-decoration: underline; /* show underline on hover */
 }
+
 
 
 
