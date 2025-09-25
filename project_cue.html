@@ -16,7 +16,7 @@
     <!-- TOPP-NAV -->
 <header class="site-header" id="site-header">
   <div class="lang-toggle">
-    <button id="lang-btn">Norsk</button>
+    <button id="lang-btn" data-en="Norsk" data-no="English">Norsk</button>
   </div>
   <nav class="nav">
     <a href="#about"     data-en="About"     data-no="Om meg">About</a>
@@ -24,75 +24,103 @@
     <a href="#contact"   data-en="Contact"   data-no="Kontakt">Contact</a>
   </nav>
 </header>
-    <main class="grid">
-        <section class="hero" 
-            style="--hero-image: url('images/cue_pose.png'); --hero-opacity:0.8;">
-            <h1 class="hero_inset"><span class="accent">Project</span> | Cue - Figma prototype</h1>
-            <ul class="project_tools" aria-label="Technologies used" role="list" style="padding-left: 5vw">
-                <li>Figma</li>
-            </ul>
-        </section>
 
-        <section id="project_intro" class="project_site card">
-            <h2>The project</h2>
-            <p> <i>"Cue"</i> was a student group project carried out as part of the MIX202 course at the University of Bergen. 
-                The prototype aimed to create a tool to support individuals struggling with social interaction and everyday tasks. 
-                It introduced multiple search methods—sketch, pose, text, and speech—to ensure accessibility and inclusivity through universal design. 
-                In addition, the prototype featured mini-games that allowed users to practice and experience common social interactions in daily life. 
-                The design and user experience were intentionally kept simple to better serve people with disabilities or social anxiety.
-            </p>
-            <p>
-                The project was based on an assignment that required us to explore video retrieval technology—a method for retrieving media, such as videos or images, from a predefined database. 
-                This technology relies on searches conducted through text or speech-to-text input. 
-                We aimed to apply this concept to a real-world scenario, which ultimately led to the creation of Cue—an interactive tool designed to help users practice social cues.
-            </p>
-            <p>Check out the prototype! <a href="https://www.figma.com/proto/EhBsDKueoREaZWGqrFPzvV/Cue?node-id=728-3417&p=f&t=Uxp2kKbyF0rU6HkO-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A2166&starting-point-node-id=232%3A2311" target="_blank" rel="noopener noreferrer">here!</a></p>
-        </section>
+<main class="grid">
 
-    <section id="project_snippets" class="project_site card">
-    <h2>Snippets from the prototype</h2>
+  <section class="hero" 
+      style="--hero-image: url('images/cue_pose.png'); --hero-opacity:0.8;">
+    <h1 class="hero_inset" 
+        data-en="Project | Cue - Figma prototype" 
+        data-no="Prosjekt | Cue - Figma prototype">
+        Project | Cue - Figma prototype
+    </h1>
+    <ul class="project_tools" aria-label="Technologies used" role="list" style="padding-left: 5vw">
+      <li data-en="Figma" data-no="Figma">Figma</li>
+    </ul>
+  </section>
+
+  <section id="project_intro" class="project_site card">
+    <h2 data-en="The project" data-no="Prosjektet">The project</h2>
+    <p data-en='"Cue" was a student group project carried out as part of the MIX202 course at the University of Bergen. The prototype aimed to create a tool to support individuals struggling with social interaction and everyday tasks. It introduced multiple search methods—sketch, pose, text, and speech—to ensure accessibility and inclusivity through universal design. In addition, the prototype featured mini-games that allowed users to practice and experience common social interactions in daily life. The design and user experience were intentionally kept simple to better serve people with disabilities or social anxiety.' 
+       data-no='"Cue" var et studentgruppeprosjekt gjennomført som del av MIX202-kurset ved Universitetet i Bergen. Prototypen hadde som mål å skape et verktøy som støttet personer som strever med sosial interaksjon og daglige oppgaver. Den introduserte flere søkemetoder—skisse, posisjon, tekst og tale— for å sikre tilgjengelighet og universell utforming. I tillegg inneholdt prototypen minispill som lot brukere øve på sosiale interaksjoner i hverdagen. Design og brukeropplevelse ble bevisst holdt enkel for å tjene personer med funksjonsnedsettelser eller sosial angst.'>
+      <i>"Cue"</i> was a student group project ...
+    </p>
+    <p data-en='The project was based on an assignment that required us to explore video retrieval technology—a method for retrieving media, such as videos or images, from a predefined database. This technology relies on searches conducted through text or speech-to-text input. We aimed to apply this concept to a real-world scenario, which ultimately led to the creation of Cue—an interactive tool designed to help users practice social cues.' 
+       data-no='Prosjektet var basert på en oppgave som krevde at vi utforsket videogjenfinningsteknologi—en metode for å hente frem media, som videoer eller bilder, fra en forhåndsdefinert database. Teknologien er basert på søk via tekst eller tale-til-tekst. Vi ønsket å bruke dette i et realistisk scenario, noe som til slutt førte til utviklingen av Cue—et interaktivt verktøy for å øve på sosiale signaler.'>
+      The project was based on an assignment ...
+    </p>
+    <p>
+      <span data-en="Check out the prototype!" data-no="Se prototypen her!">
+        Check out the prototype!
+      </span>
+      <a href="https://www.figma.com/proto/EhBsDKueoREaZWGqrFPzvV/Cue?node-id=728-3417&p=f&t=Uxp2kKbyF0rU6HkO-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A2166&starting-point-node-id=232%3A2311"
+         target="_blank" rel="noopener noreferrer"
+         data-en="here!" data-no="her!">here!</a>
+    </p>
+  </section>
+
+  <section id="project_snippets" class="project_site card">
+    <h2 id="snippets-title" data-en="Snippets from the prototype" data-no="Utdrag fra prototypen">
+      Snippets from the prototype
+    </h2>
 
     <div class="slideshow" role="region" aria-labelledby="snippets-title">
-        <div class="slides" data-index="0">
+      <div class="slides" data-index="0">
         <figure class="slide">
-            <img src="images/Sketch search 3.svg" alt="Landingpage with hero and CTA" loading="lazy">
-            <figcaption>Sketch search enabing users to search by sektches.</figcaption>
+          <img src="images/Sketch search 3.svg" alt="Landingpage with hero and CTA" loading="lazy">
+          <figcaption data-en="Sketch search enabling users to search by sketches." 
+                      data-no="Skissesøk som gjør det mulig å søke ved hjelp av tegninger.">
+            Sketch search enabling users to search by sketches.
+          </figcaption>
         </figure>
 
         <figure class="slide">
-            <img src="images/recognizefeatures_main3.svg" alt="About page layout with timeline" loading="lazy">
-            <figcaption>Minigame to practice recognition of body language.</figcaption>
+          <img src="images/recognizefeatures_main3.svg" alt="About page layout with timeline" loading="lazy">
+          <figcaption data-en="Mini-game to practice recognition of body language." 
+                      data-no="Minispill for å øve på gjenkjenning av kroppsspråk.">
+            Mini-game to practice recognition of body language.
+          </figcaption>
         </figure>
 
         <figure class="slide">
-            <img src="images/Scenario_ Make an order 1.svg" alt="Contact form and map embed" loading="lazy">
-            <figcaption>Full Motion Video game to practice real life scenarios.</figcaption>
+          <img src="images/Scenario_ Make an order 1.svg" alt="Contact form and map embed" loading="lazy">
+          <figcaption data-en="Full Motion Video game to practice real life scenarios." 
+                      data-no="Full Motion Video-spill for å øve på virkelige scenarier.">
+            Full Motion Video game to practice real life scenarios.
+          </figcaption>
         </figure>
 
         <figure class="slide">
-            <img src="images/Practice_main.svg" alt="Contact form and map embed" loading="lazy">
-            <figcaption>"Your goals" sub page where the user can choose which goals to practice.</figcaption>
+          <img src="images/Practice_main.svg" alt="Contact form and map embed" loading="lazy">
+          <figcaption data-en='"Your goals" sub page where the user can choose which goals to practice.' 
+                      data-no='"Dine mål"-side der brukeren kan velge hvilke mål som skal øves på.'>
+            "Your goals" sub page where the user can choose which goals to practice.
+          </figcaption>
         </figure>
-        </div>
-        
+      </div>
 
-        <button class="nav prev" aria-label="Previous slide">‹</button>
-        <button class="nav next" aria-label="Next slide">›</button>
+      <button class="nav prev" aria-label="Previous slide" 
+              data-en="‹" data-no="‹">‹</button>
+      <button class="nav next" aria-label="Next slide" 
+              data-en="›" data-no="›">›</button>
 
-        <div class="dots" role="tablist" aria-label="Slide navigation">
-          
-        </div>
-    </section>
+      <div class="dots" role="tablist" aria-label="Slide navigation"></div>
+    </div>
+  </section>
 
+</main>
 
-    </main>
-    <footer class="tiny">
-        <p>© <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.</p>
-    </footer>
+<footer class="tiny">
+  <p data-en="© Anders Finnebråten Gjerald — All rights reserved." 
+     data-no="© Anders Finnebråten Gjerald — Alle rettigheter reservert.">
+     © <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.
+  </p>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+
 
 
 
