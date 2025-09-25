@@ -19,9 +19,9 @@
     <button id="lang-btn">Norsk</button>
   </div>
   <nav class="nav">
-    <a href="#about" data-en="About" data-no="Om meg">About</a>
-    <a href="#portfolio" data-en="Portfolio" data-no="Portefølje">Portfolio</a>
-    <a href="#contact" data-en="Contact" data-no="Kontakt">Contact</a>
+    <a href="#about"     data-en="About"      data-no="Om meg">About</a>
+    <a href="#portfolio" data-en="Portfolio"  data-no="Portefølje">Portfolio</a>
+    <a href="#contact"   data-en="Contact"    data-no="Kontakt">Contact</a>
   </nav>
 </header>
 
@@ -34,9 +34,13 @@
           
           <div class="hero__text">
             <h1><span class="muted">Anders</span> <span class="accent">F. Gjerald</span></h1>
-            <p style="font-size:1.5em;"class="role">Welcome to my portfolio! <br> I do interactiondesign.</p>
+                <p class="role" data-html="true"
+                   data-en="Welcome to my portfolio! <br> I do interaction design."
+                   data-no="Velkommen til min portefølje! <br> Jeg driver med interaksjonsdesign.">
+                  Welcome to my portfolio! <br> I do interaction design.</p>
             <div class="hero__cta">
-              <button onclick="location.href='mailto:andersgjerald@gmail.com';" class="btn" style="font-size: 2em;">Contact me!</button>
+              <button onclick="location.href='mailto:andersgjerald@gmail.com';" class="btn" style="font-size: 2em;" 
+                data-en="Contact me!" data-no="Kontakt meg!">Contact me!</button>
             </div>
           </div>
 
