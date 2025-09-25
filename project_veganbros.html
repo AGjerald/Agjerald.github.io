@@ -7,158 +7,122 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
-  <!-- Koble til separat CSS-fil -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- YTTERKANT / RAMME -->
   <div class="page">
-    <!-- TOPP-NAV -->
-      <header class="site-header" id="site-header">
-        <div class="lang-toggle">
-          <button id="lang-btn">Norsk</button>
-        </div>
-        <nav class="nav">
-          <a href="#about"     data-en="About"     data-no="Om meg">About</a>
-          <a href="#portfolio" data-en="Portfolio" data-no="Portefølje">Portfolio</a>
-          <a href="#contact"   data-en="Contact"   data-no="Kontakt">Contact</a>
-        </nav>
-      </header>
+    <!-- TOP NAV -->
+    <header class="site-header" id="site-header">
+      <div class="lang-toggle">
+        <button id="lang-btn" data-en="Norsk" data-no="English">Norsk</button>
+      </div>
+      <nav class="nav">
+        <a href="#about"     data-en="About"     data-no="Om meg">About</a>
+        <a href="#portfolio" data-en="Portfolio" data-no="Portefølje">Portfolio</a>
+        <a href="#contact"   data-en="Contact"   data-no="Kontakt">Contact</a>
+      </nav>
+    </header>
+
     <main class="grid">
-        <section class="hero" 
-            style="--hero-image: url('images/vbvb.PNG'); --hero-opacity:0.8;">
-            <h1 class="hero_inset"><span class="accent">Project</span> | Vegan Bros - Website</h1>
-            <ul class="project_tools" aria-label="Technologies used" role="list" style="padding-left: 5vw">
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>Figma</li>
-            </ul>
-        </section>
+      <!-- HERO -->
+      <section class="hero" style="--hero-image: url('images/vbvb.PNG'); --hero-opacity:0.8;">
+        <h1 class="hero_inset"
+            data-en="Project | Vegan Bros — Website"
+            data-no="Prosjekt | Vegan Bros — Nettside">
+          Project | Vegan Bros — Website
+        </h1>
+        <ul class="project_tools" aria-label="Technologies used" style="padding-left: 5vw">
+          <li data-en="HTML &amp; CSS" data-no="HTML &amp; CSS">HTML &amp; CSS</li>
+          <li data-en="JavaScript"     data-no="JavaScript">JavaScript</li>
+          <li data-en="Figma"          data-no="Figma">Figma</li>
+        </ul>
+      </section>
 
-        <section id="project_site" class="project_site card">
-            <h2>The project</h2>
-            <p> <i>"Vegan Bros"</i> was a group-project that was part of the webdevelopment subject MIX114. The subject introduced me and my fellow students to frontend development through building a website from scratch.
-                Through the project we were assigned with a pretended customer that gave us guidelines and design wishes for their site. Over a couple of months we were assigned the task to gain insight, ideate and create a website for the imagined customer.
-            </p>
-            <p>
-                We leaned heavily on a personalized site focusing on handdrawn illustrations, creating a clear identity for the customer. With this in mind, we designed each page on the website like scrolling posters.
-            </p>
-            <p>Check out the website <a href="https://agjerald.github.io/veganbros/index.html" target="_blank" rel="noopener noreferrer">here!</a></p>
-        </section>
+      <!-- INTRO -->
+      <section id="project_intro" class="project_site card">
+        <h2 data-en="The project" data-no="Prosjektet">The project</h2>
 
-    <section id="project_site" class="project_site card">
-    <h2>Snippets from the website</h2>
+        <p data-html
+           data-en='The group project <i>“Vegan Bros”</i> was part of the web development course MIX114. The course introduced us to front-end by building a website from scratch. We worked with a fictitious client who provided guidelines and design wishes. Over a few months we gathered insight, ideated, and built a site for the imagined customer.'
+           data-no='Gruppeprosjektet <i>«Vegan Bros»</i> var en del av webutviklingsfaget MIX114. Faget introduserte oss for front-end ved å bygge en nettside fra bunnen av. Vi jobbet med en fiktiv kunde som ga retningslinjer og designønsker. Over noen måneder innhentet vi innsikt, idégenererte og laget en side for den tenkte kunden.'>
+          "Vegan Bros" was a group-project…
+        </p>
 
-    <div class="slideshow" aria-label="Project screenshots">
-        <div class="slides" data-index="0">
-        <figure class="slide">
-            <img src="images/vb_forside2.PNG" alt="Landingpage with hero and CTA" loading="lazy">
-            <figcaption>Landingpage with hero and CTA.</figcaption>
-        </figure>
+        <p data-html
+           data-en='We leaned on a personalized style with hand-drawn illustrations to create a distinct identity. With that in mind, we designed each page to feel like scrolling posters.'
+           data-no='Vi la vekt på en personlig stil med håndtegnede illustrasjoner for å skape en tydelig identitet. Med dette som utgangspunkt designet vi hver side som «scrollende plakater».'>
+          We leaned heavily on a personalized site…
+        </p>
 
-        <figure class="slide">
-            <img src="images/vb_forside3.PNG" alt="About page layout with timeline" loading="lazy">
-            <figcaption>Recruitment page listing all enlistments in Springbrettet.</figcaption>
-        </figure>
+        <p>
+          <span data-en="Check out the website" data-no="Se nettsiden her">Check out the website</span>
+          <a href="https://agjerald.github.io/veganbros/index.html" target="_blank" rel="noopener noreferrer"
+             data-en="here!" data-no="her!">here!</a>
+        </p>
+      </section>
 
-        <figure class="slide">
-            <img src="images/vb_omoss1.PNG" alt="Contact form and map embed" loading="lazy">
-            <figcaption>Project site for the organizations podcast "Karrierestudio".</figcaption>
-        </figure>
+      <!-- SNIPPETS / SLIDESHOW -->
+      <section id="project_snippets" class="project_site card">
+        <h2 id="snippets-title"
+            data-en="Snippets from the website"
+            data-no="Utdrag fra nettsiden">
+          Snippets from the website
+        </h2>
 
-        <figure class="slide">
-            <img src="images/vb_booking.PNG" alt="Contact form and map embed" loading="lazy">
-            <figcaption>Project site for the organizations podcast "Karrierestudio".</figcaption>
-        </figure>
+        <div class="slideshow" role="region" aria-labelledby="snippets-title" aria-label="Project screenshots">
+          <div class="slides" data-index="0">
+            <figure class="slide">
+              <img src="images/vb_forside2.PNG" alt="Vegan Bros website — landing page with hero and call to action" loading="lazy">
+              <figcaption data-en="Landing page with hero and CTA."
+                          data-no="Landingsside med hero og CTA.">
+                Landing page with hero and CTA.
+              </figcaption>
+            </figure>
+
+            <figure class="slide">
+              <img src="images/vb_forside3.PNG" alt="Vegan Bros website — alternative landing section" loading="lazy">
+              <figcaption data-en="Alternative landing section."
+                          data-no="Alternativ landingsseksjon.">
+                Alternative landing section.
+              </figcaption>
+            </figure>
+
+            <figure class="slide">
+              <img src="images/vb_omoss1.PNG" alt="Vegan Bros website — About us page" loading="lazy">
+              <figcaption data-en="About us page."
+                          data-no="Om oss-side.">
+                About us page.
+              </figcaption>
+            </figure>
+
+            <figure class="slide">
+              <img src="images/vb_booking.PNG" alt="Vegan Bros website — Booking page" loading="lazy">
+              <figcaption data-en="Booking page."
+                          data-no="Bookingside.">
+                Booking page.
+              </figcaption>
+            </figure>
+          </div>
+
+          <button class="nav prev" aria-label="Previous slide">‹</button>
+          <button class="nav next" aria-label="Next slide">›</button>
+
+          <!-- JS bygger dottene dynamisk -->
+          <div class="dots" role="tablist" aria-label="Slide navigation"></div>
         </div>
-        
-
-        <button class="nav prev" aria-label="Previous slide">‹</button>
-        <button class="nav next" aria-label="Next slide">›</button>
-
-        <div class="dots" role="tablist" aria-label="Slide navigation">
-        <button role="tab" aria-selected="true" tabindex="0" aria-controls="slide-1"></button>
-        <button role="tab" aria-selected="false" tabindex="-1" aria-controls="slide-2"></button>
-        <button role="tab" aria-selected="false" tabindex="-1" aria-controls="slide-3"></button>
-        </div>
-    </div>
-    </section>
-
-
+      </section>
     </main>
+
     <footer class="tiny">
-        <p>© <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.</p>
+      <p data-en="© Anders Finnebråten Gjerald — All rights reserved."
+         data-no="© Anders Finnebråten Gjerald — Alle rettigheter reservert.">
+        © <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.
+      </p>
     </footer>
+  </div>
 
-    <script>
-        (function initSlideshow(root = document.querySelector('#project_site .slideshow')) {
-        if (!root) return;
-
-        const track = root.querySelector('.slides');
-        const slides = [...root.querySelectorAll('.slide')];
-        const prevBtn = root.querySelector('.prev');
-        const nextBtn = root.querySelector('.next');
-        const dotsWrap = root.querySelector('.dots');
-
-        // Lag dots dynamisk basert på faktiske slides
-        dotsWrap.innerHTML = '';
-        const dots = slides.map((_, i) => {
-            const b = document.createElement('button');
-            b.type = 'button';
-            b.setAttribute('role', 'tab');
-            b.setAttribute('aria-controls', `slide-${i+1}`);
-            b.tabIndex = i === 0 ? 0 : -1;
-            b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-            dotsWrap.appendChild(b);
-            return b;
-        });
-
-        let index = 0;
-        const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
-        const setIndex = (i, {focusDot=false} = {}) => {
-            index = clamp(i, 0, slides.length - 1);
-            track.style.transform = `translateX(${-index * 100}%)`;
-            dots.forEach((d, idx) => {
-            const sel = idx === index;
-            d.setAttribute('aria-selected', sel ? 'true' : 'false');
-            d.tabIndex = sel ? 0 : -1;
-            if (sel && focusDot) d.focus();
-            });
-        };
-
-        prevBtn.addEventListener('click', () => setIndex(index - 1, {focusDot:true}));
-        nextBtn.addEventListener('click', () => setIndex(index + 1, {focusDot:true}));
-
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => setIndex(i, {focusDot:true}));
-            dot.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') setIndex(i + 1, {focusDot:true});
-            if (e.key === 'ArrowLeft')  setIndex(i - 1, {focusDot:true});
-            });
-        });
-
-        // Swipe
-        let startX = null, lastX = null, isDragging = false;
-        const start = (x) => { startX = lastX = x; isDragging = true; track.style.transition = 'none'; };
-        const move  = (x) => { if (!isDragging) return; lastX = x; const dx = x - startX; track.style.transform = `translateX(${(-index*100) + (dx / root.clientWidth)*100}%)`; };
-        const end   = () => {
-            if (!isDragging) return;
-            const dx = lastX - startX;
-            track.style.transition = '';
-            if (Math.abs(dx) > root.clientWidth * 0.2) setIndex(index + (dx < 0 ? 1 : -1));
-            else setIndex(index);
-            isDragging = false; startX = lastX = null;
-        };
-
-        track.addEventListener('pointerdown', e => { track.setPointerCapture(e.pointerId); start(e.clientX); });
-        track.addEventListener('pointermove', e => move(e.clientX));
-        track.addEventListener('pointerup', end);
-        track.addEventListener('pointercancel', end);
-        track.addEventListener('pointerleave', () => isDragging && end());
-
-        setIndex(0);
-        })();
-    </script>
+  <!-- Felles script (språkbytte, sticky header, slideshow-init) -->
+  <script src="script.js" defer></script>
 </body>
 </html>
 
