@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,94 +12,87 @@
 <body>
   <div class="page">
     <!-- TOP NAV -->
-    <header class="site-header" id="site-header">
-      <div class="lang-toggle">
-        <button id="lang-btn" data-en="Norsk" data-no="English">Norsk</button>
-      </div>
-      <nav class="nav">
-        <a href="index.html#portfolio" data-en="Portfolio" data-no="Portefølje">Portfolio</a>
-        <a href="contact.html"   data-en="Contact"   data-no="Kontakt">Contact</a>
-      </nav>
-    </header>
+<header class="site-header" id="site-header">
+  <!-- Logo/navn til venstre -->
+  <a href="index.html" class="logo">Anders F. Gjerald</a>
+
+  <!-- Navigasjon -->
+  <nav class="nav">
+    <a href="index.html#portfolio">Prosjekter</a>
+    <a href="about.html">Om meg</a>
+    <a href="index.html">Hjem</a>
+  </nav>
+
+  <!-- Språkknapp helt til høyre -->
+<div class="lang-toggle">
+  <a class="lang-btn" href="/en/project_veganbros.html" aria-label="Switch to English">EN</a>
+</div>
+</header>
 
     <main class="grid">
       <!-- HERO -->
-      <section class="hero" style="--hero-image: url('images/vbvb.PNG'); --hero-opacity:0.8;">
-        <h1 class="hero_inset"
-            data-en="Project | Vegan Bros — Website"
-            data-no="Prosjekt | Vegan Bros — Nettside">
-          Project | Vegan Bros — Website
+      <section class="project_hero" style="--hero-image: url('images/vbvb.PNG'); --hero-opacity:0.8;">
+        <h1 class="hero_inset">
+          Prosjekt | Vegan Bros — Nettside
         </h1>
         <ul class="project_tools" aria-label="Technologies used" style="padding-left: 5vw">
-          <li data-en="HTML &amp; CSS" data-no="HTML &amp; CSS">HTML &amp; CSS</li>
-          <li data-en="JavaScript"     data-no="JavaScript">JavaScript</li>
-          <li data-en="Figma"          data-no="Figma">Figma</li>
+          <li>HTML &amp; CSS</li>
+          <li>JavaScript</li>
+          <li>Figma</li>
         </ul>
       </section>
 
       <!-- INTRO -->
       <section id="project_intro" class="project_site card">
-        <h2 data-en="The project" data-no="Prosjektet">The project</h2>
+        <h2>Prosjektet</h2>
 
-        <p data-html
-           data-en='The group project <i>“Vegan Bros”</i> was part of the web development course MIX114. The course introduced us to front-end by building a website from scratch. We worked with a fictitious client who provided guidelines and design wishes. Over a few months we gathered insight, ideated, and built a site for the imagined customer.'
-           data-no='Gruppeprosjektet <i>«Vegan Bros»</i> var en del av webutviklingsfaget MIX114. Faget introduserte oss for front-end ved å bygge en nettside fra bunnen av. Vi jobbet med en fiktiv kunde som ga retningslinjer og designønsker. Over noen måneder innhentet vi innsikt, idégenererte og laget en side for den tenkte kunden.'>
-            The group project <i>"Vegan Bros"</i> was a group-project that was part of the webdevelopment subject MIX114. The subject introduced me and my fellow students to frontend development through building a website from scratch.
-                Through the project we were assigned with a pretended customer that gave us guidelines and design wishes for their site. Over a couple of months we were assigned the task to gain insight, ideate and create a website for the imagined customer.
+        <p data-html>
+          Gruppeprosjektet <i>«Vegan Bros»</i> var en del av webutviklingsfaget MIX114. Faget introduserte oss for front-end ved å bygge en nettside fra bunnen av. Vi jobbet med en fiktiv kunde som ga retningslinjer og designønsker. Over noen måneder innhentet vi innsikt, idégenererte og laget en side for den tenkte kunden.
         </p>
 
-        <p data-html
-           data-en='We leaned on a personalized style with hand-drawn illustrations to create a distinct identity. With that in mind, we designed each page to feel like scrolling posters.'
-           data-no='Vi la vekt på en personlig stil med håndtegnede illustrasjoner for å skape en tydelig identitet. Med dette som utgangspunkt designet vi hver side som «scrollende plakater».'>
-           We leaned heavily on a personalized site focusing on handdrawn illustrations, creating a clear identity for the customer. With this in mind, we designed each page on the website like scrolling posters.
+        <p data-html>
+          Vi la vekt på en personlig stil med håndtegnede illustrasjoner for å skape en tydelig identitet. Med dette som utgangspunkt designet vi hver side som «scrollende plakater».
         </p>
 
         <p>
-          <span data-en="Check out the website" data-no="Se nettsiden her">Check out the website</span>
-          <a href="https://agjerald.github.io/veganbros/index.html" target="_blank" rel="noopener noreferrer"
-             data-en="here!" data-no="her!">here!</a>
+          <span>Se nettsiden her</span>
+          <a href="https://agjerald.github.io/veganbros/index.html" target="_blank" rel="noopener noreferrer">her!</a>
         </p>
       </section>
 
       <!-- SNIPPETS / SLIDESHOW -->
       <section id="project_snippets" class="project_site card">
-        <h2 id="snippets-title"
-            data-en="Snippets from the website"
-            data-no="Utdrag fra nettsiden">
-          Snippets from the website
+        <h2 id="snippets-title">
+          Utdrag fra nettsiden
         </h2>
 
         <div class="slideshow" role="region" aria-labelledby="snippets-title" aria-label="Project screenshots">
           <div class="slides" data-index="0">
             <figure class="slide">
-              <img src="images/vb_forside2.PNG" alt="Vegan Bros website — landing page with hero and call to action" loading="lazy">
-              <figcaption data-en="Landing page with hero and CTA."
-                          data-no="Landingsside med hero og CTA.">
-                Landing page with hero and CTA.
+              <img src="images/vb1_2032_1124.svg" alt="Vegan Bros website — landing page with hero and call to action" loading="lazy">
+              <figcaption>
+                Landingsside med hero og CTA.
               </figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/vb_forside3.PNG" alt="Vegan Bros website — alternative landing section" loading="lazy">
-              <figcaption data-en="Alternative landing section."
-                          data-no="Alternativ landingsseksjon.">
-                Alternative landing section.
+              <img src="images/vb2_2032_1124.svg" alt="Vegan Bros website — alternative landing section" loading="lazy">
+              <figcaption>
+                Alternativ landingsseksjon.
               </figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/vb_omoss1.PNG" alt="Vegan Bros website — About us page" loading="lazy">
-              <figcaption data-en="About us page."
-                          data-no="Om oss-side.">
-                About us page.
+              <img src="images/vb3_2032_1124.svg" alt="Vegan Bros website — About us page" loading="lazy">
+              <figcaption>
+                Om oss-side.
               </figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/vb_booking.PNG" alt="Vegan Bros website — Booking page" loading="lazy">
-              <figcaption data-en="Booking page."
-                          data-no="Bookingside.">
-                Booking page.
+              <img src="images/vb4_2032_1124.svg" alt="Vegan Bros website — Booking page" loading="lazy">
+              <figcaption>
+                Bookingside.
               </figcaption>
             </figure>
           </div>
@@ -114,9 +107,8 @@
     </main>
 
     <footer class="tiny">
-      <p data-en="© Anders Finnebråten Gjerald — All rights reserved."
-         data-no="© Anders Finnebråten Gjerald — Alle rettigheter reservert.">
-        © <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.
+      <p>
+        © <span id="y"></span> Anders Finnebråten Gjerald — Alle rettigheter reservert.
       </p>
     </footer>
   </div>
@@ -125,7 +117,6 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-
 
 
 

@@ -1,16 +1,22 @@
 /* ===== CSS-variabler og grunnstil ===== */
 :root{
+  /* du har allerede disse – behold/tilpass verdier etter behov */
   --bg: #1f232a;
   --panel: #2a2f38;
   --panel-2: #272c34;
   --line: #3a3f49;
   --text: #d7dae1;
   --muted: #aeb4c2;
-  --accent: #f0b23a; /* gullaccent */
-  --biaccent: #ffffff;
-  --triaccent: #ffffff;
-  --shadow: 0 8px 30px rgba(0,0,0,.25);
+  --accent: #f0b23a;          /* midtlinje/aksent */
+  --biaccent: #ffffff;        /* dot-farge */
   --radius: 20px;
+
+  /* timeline-spesifikke */
+  --dot-size: 30px;
+  --card-pad-y: 22px;         /* vertikal padding i kort */
+  --year-gap: 8px;            /* avstand dot → årstall */
+  --year-top: 40px;           /* vertikal posisjon for dot/år */
+  --year-color: var(--muted);
 }
 
 *{ box-sizing:border-box }
@@ -23,6 +29,12 @@ body{
   line-height: 1.6;
 }
 
+@media (max-width: 450px) {
+  *{
+    box-sizing: initial;
+  }
+}
+
 /* Ytre gul ramme rundt siden */
 .page{
   width: 100%;
@@ -31,6 +43,7 @@ body{
   padding: 50px;
   background: var(--bg);
   box-shadow: none; /* Kan fjerne skyggene hvis du vil ha "flat" fullbredde */
+  padding-top: 72px;
 }
 
 /* ===== Toppnav ===== */
@@ -43,10 +56,8 @@ body{
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
-  background: var(--surface);
-  
+  background: var(--panel);
   z-index: 1000;
-
   transition: transform 0.3s ease;
 }
 
@@ -54,16 +65,119 @@ body{
   transform: translateY(-100%);
 }
 
-.nav{ display:flex; gap:18px; margin-left:auto }
+
+
+.logo {
+  font-weight: 800;
+  font-size: clamp(1rem, 1.4vh, 1.4rem);
+  text-decoration: none;
+  color: inherit; /* arver fargen fra header */
+}
+
+.hamburger{
+  display:none;
+  width:42px; height:42px;
+  border:1px solid var(--line);
+  background:#1b1f26;
+  border-radius:10px;
+  cursor:pointer;
+  align-items:center; 
+  justify-content:center;
+  gap:5px;
+  padding:8px;
+}
+.hamburger__bar{
+  display:block;
+  width:100%;
+  height:2px;
+  background: var(--accent);
+}
+
+/* Mobile layout (≤ 750px) */
+@media (max-width: 900px){
+  /* Show the hamburger in top-right */
+  .hamburger{ display:flex; }
+
+  /* Hide inline nav by default on mobile */
+  .nav{
+    position:absolute;
+    top:100%;               /* just below the header */
+    right:24px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    background: var(--panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px;
+    box-shadow: var(--shadow);
+    transform: translateY(6px);
+    opacity:0;
+    pointer-events:none;
+    visibility:hidden;
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+    z-index: 1200;
+    min-width: 180px;
+  }
+  .nav a{ padding:6px 4px; }
+
+  /* Put the lang button inside the dropdown on mobile */
+  .lang-toggle{ padding:0; }
+  .lang-toggle button{
+    width:100%;
+    font-size:1rem;
+  }
+
+  /* When open */
+  .nav.open{
+    opacity:1;
+    transform: translateY(0);
+    pointer-events:auto;
+    visibility:visible;
+    transition: opacity .18s ease, transform .18s ease;
+  }
+}
+
+/* Desktop (hide hamburger, show nav inline) */
+@media (min-width: 900px){
+  .hamburger{ display:none; }
+  .nav{
+    position: static;
+    display:flex;
+    flex-direction:row;
+    gap:48px;
+    background: transparent;
+    border:none;
+    border-radius:0;
+    padding:0;
+    box-shadow:none;
+    opacity:1;
+    pointer-events:auto;
+    visibility:visible;
+    transform:none;
+  }
+}
+
+.nav{ 
+  display:flex;
+  align-items:flex-end; 
+  gap:48px; 
+  font-size: clamp(1rem, 1.4vh, 1.4rem);
+}
+
+
+
+  /*display: flex;
+  gap: 24px;
+  font-size: 1.4em;
+  margin-right: 0;  */
 .nav a{
   color:var(--muted); text-decoration:none; font-weight:600;
 }
 .nav a:hover{ color:var(--text) }
 
 .lang-toggle {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  padding: 12px 24px;
 }
 
 .lang-toggle button {
@@ -73,7 +187,8 @@ body{
   padding: 5px 10px;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
+  font-size: 1.2rem;
 }
 
 .lang-toggle button:hover {
@@ -93,27 +208,47 @@ body{
 }
 
 /* ===== Hero ===== */
-.hero {
-  display: flex;
-  flex-direction: column;   /* stack text + socials if you want */
-  justify-content:center;
-  min-height: 100vh;        /* full screen hero */
-  padding: 28px;
+.hero{
   position: relative;
+  display: grid;
+  align-items: center;
+  min-height: clamp(420px, 60vh, 680px);
+  padding: 28px;
   overflow: hidden;
-
-  /* background image */
-  background: var(--hero-image) no-repeat center center / cover;
-  
-  border: 0px solid var(--line);
 }
 
-.hero::before{
+.project_hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: var(--hero-image) no-repeat center center / cover;
+    border: 0px solid var(--line);
+}
+
+.project_hero::before{
   content: "";
   position: absolute;
   inset: 0;
   background: black no-repeat center/cover;
   opacity: var(--hero-opacity, 0);
+  z-index: -1;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  right: 8vw; top: 50%;
+  transform: translateY(-50%);
+  width: min(40vw, 420px);
+  height: min(40vw, 420px);
+  background: radial-gradient(closest-side, var(--accent, #6cf), transparent 70%);
+  filter: blur(40px);
+  opacity: .18;
   z-index: 0;
 }
 
@@ -128,12 +263,43 @@ body{
 
 .kicker{ letter-spacing:.1em; color:var(--muted); margin:0 0 8px }
 .hero h1{
-  margin:0 0 6px; font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 800;
+  font-size: clamp(36px, 3vw, 66px);
+  font-weight: 300;
+  justify-content: center;
+  align-items: center;
 }
+
+.hero__p {
+  font-size: clamp(16px, 4.5vw, 26px);
+  font-weight: 300;
+}
+
 .hero .muted{ color: var(--text) }
 .hero .accent{ color: var(--accent) }
 .role{ color: var(--muted); margin:.25rem 0 1rem; font-weight:500 }
+
+.hero__text{
+  position: relative;
+  z-index: 2;                /* over bildet */
+  max-width: 100ch;
+}
+
+@media (max-width: 1254px){
+  .hero__text{
+    max-width: 80ch;
+  }
+}
+
+@media (max-width: 1044px){
+  .hero__text{
+    max-width: 60ch;
+  }
+}
+
+.hero_inset{
+  padding-left: 5vw;
+}
+
 
 .btn {
   display: inline-block;
@@ -141,6 +307,7 @@ body{
   color: var(--accent);
   text-decoration: none;
   font-weight: 700;
+  margin-top: clamp(36px, 4.5vw, 6px);
   padding: 10px 16px;
   border-radius: 10px;
   border: 1px solid;
@@ -149,7 +316,7 @@ body{
 }
 .btn:hover {
   background: var(--accent);
-  color: #ffff;
+  color: var(--bg);
   transform: translateY(-2px);  /* lift slightly */
   /*box-shadow: 0 4px 10px;*/
 }
@@ -163,14 +330,40 @@ body{
 }
 
 .hero__media{
-  position:relative;
+  position: absolute;
+  top: 50%;
+  right: clamp(12px, 8vw, 196px);
+  transform: translateY(-50%) rotate(-1.5deg);
+  width: min(38vw, 460px);
+  aspect-ratio: 5 / 5;
+  z-index: 1;
+  pointer-events: none;      /* så bildet ikke stjeler klikk */
 }
+
+@media (max-width: 900px){
+  .hero__media{
+    position: static;
+    transform: none;
+    width: min(80vw, 360px);
+    margin: 16px auto 0;
+    pointer-events: auto;
+  }
+  .hero__media img{
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
+}
+
 .hero__media img{
-  width:150%; height:auto; display:block;
-  /*border-radius: 0px; filter: grayscale(.9) contrast(1.05);*/
-  border:0px solid var(--line);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 20px 80px rgba(0,0,0,.45);
+    -webkit-mask-image: linear-gradient(to left, #000 70%, transparent 100%);
+            mask-image: linear-gradient(to left, #000 70%, transparent 100%);
 }
-.social{
+  .social{
   list-style:none; padding:0; margin:0;
   position:absolute; right:-6px; top:50%; transform: translateY(-50%);
   display:flex; flex-direction:column; gap:10px;
@@ -182,9 +375,6 @@ body{
 }
 .social a:hover{ color:var(--accent); border-color:rgba(240,178,58,.5) }
 
-.hero_inset{
-  padding-left: 5vw;
-}
 
 /* ===== Cards ===== */
 .card{
@@ -298,63 +488,149 @@ body{
 }
 .center{ text-align:center; margin-top:12px }
 
-/* ===== Experience ===== */
-.experience { padding-top: 16px }
+/* ---- Timeline ---- */
+.timeline-section.card { 
+  padding: 24; 
+}
 
-/* container */
-.xp{
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 16px;
+/* Container + vertikal midtlinje */
+.timeline{
   position: relative;
-  padding-left: 6px;
-  padding-top: 28px;   /* space for dot + year */
-  margin-bottom: 28px;
+  padding: 24px;
+  margin-top: 14px;
+  border-radius: var(--radius);
 }
 
-/* vertical line */
-.xp::before{
-  content:"";
-  position:absolute;
-  left:32px;
-  top:0;
-  bottom:0;
-  width:2px;
-  background: var(--line);
-}
-
-/* dot */
-.xp::after{
-  content:"";
-  position:absolute;
-  left:32px;
-  top:0;
-  width:12px;
-  height:12px;
-  border-radius:50%;
-  background: var(--accent);
-  border:2px solid #111519;
-  transform: translate(-50%, 0);
-}
-
-/* year centered on the line, under the dot */
-.xp__year{
-  position:absolute;
-  left:32px;
-  top:14px;                 /* tweak to taste */
+.timeline::before{
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;               /* full høyde uansett innhold */
+  left: 50%;
   transform: translateX(-50%);
-  color:#fff;
-  font-weight:800;
-  text-align:center;
-  line-height:1;
+  width: 5px;
+  background: var(--accent);
+  z-index: 0;
 }
 
-/* KEY: keep text in the right column */
-.xp__body{
-  grid-column: 2;
+/* Ett element i lista */
+.timeline-item{
+  position: relative;
+  display: flow-root;              /* egen BFC → ingen clearfix nødvendig */
+  margin-bottom: 70px;
 }
-.xp__meta{ margin:0 0 6px; color:var(--muted); font-weight:600 }
-.xp__body p{ margin:0; color:var(--muted) }
+
+/* Dot i midten (låst mot --year-top) */
+.timeline-img{
+  position: absolute;
+  left: 50%;
+  top: calc(var(--year-top) - (var(--dot-size) / 2));
+  transform: translateX(-50%);
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: var(--biaccent);
+  z-index: 1;
+}
+
+/* ÅRSTALLET v/ dot – motsatt side av kortet */
+.timeline-item::after{
+  content: attr(data-year);
+  position: absolute;
+  top: calc(var(--year-top) - 0.6em);
+  font: 700 0.9rem/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--year-color);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Odd = venstre kort → år til høyre for dot */
+.timeline-item:nth-child(odd)::after{
+  left: calc(50% + (var(--dot-size) / 2) + var(--year-gap));
+  text-align: left;
+}
+
+/* Even = høyre kort → år til venstre for dot */
+.timeline-item:nth-child(even)::after{
+  left: calc(50% - (var(--dot-size) / 2) - var(--year-gap));
+  transform: translateX(-100%);
+  text-align: right;
+}
+
+/* Kort */
+.timeline-content{
+  position: relative;
+  width: 45%;
+  padding: var(--card-pad-y) 30px;
+  border-radius: 8px;
+  background: #222833;
+  color: #e8edf5;
+  box-shadow: 0 20px 25px -15px rgba(0,0,0,.35);
+  z-index: 3;                       /* over dot + midtlinje */
+}
+
+/* Venstre/høyre plassering */
+.timeline-item:nth-child(odd)  .timeline-content{ float: left; }
+.timeline-item:nth-child(even) .timeline-content{ float: right; }
+
+/* Tittel/tekst i kort */
+.timeline-content h3{
+  margin: 0 0 .5rem;
+  line-height: 1.25;
+  color: #fff;
+}
+.timeline-content p{
+  margin: 0;
+  line-height: 1.55;
+  color: #e0e6ee;
+}
+
+/* Piler som peker mot midtlinjen (matcher kortbakgrunn) */
+.timeline-content::after{
+  content: "";
+  position: absolute;
+  top: calc(var(--card-pad-y) + 6px);
+  width: 0; height: 0;
+  border-style: solid;
+}
+
+.timeline-item:nth-child(odd)  .timeline-content::after{
+  right: -15px;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #222833;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after{
+  left: -15px;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #222833 transparent transparent;
+}
+
+.xp__meta{
+  color: rgb(0, 0, 0);
+  
+}
+
+/* Hvis du har fade-klasser uten JS, sørg for synlig innhold */
+.js--fadeInLeft, .js--fadeInRight{ opacity: 1; transform: none; }
+
+/* Mobil: midtlinje/dot ved ~50px; alt går i én kolonne */
+@media (max-width: 768px){
+  .timeline::before{ left: 50px; transform: none; }
+  .timeline-img{ left: 50px; transform: none; }
+  .timeline-content{
+    max-width: 100%;
+    width: auto;
+    margin-left: calc(50px + var(--dot-size) + 16px);
+    float: none;
+  }
+  /* år alltid til høyre for dot på mobil */
+  .timeline-item::after{
+    left: calc(50px + (var(--dot-size) / 2) + var(--year-gap));
+    transform: none;
+    text-align: left;
+  }
+}
 
 /* ===== Testimonial ===== */
 .tst{ display:grid; grid-template-columns: 120px 1fr; gap:16px; align-items:center }
@@ -372,19 +648,106 @@ body{
   display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 14px; padding:0; list-style:none;
 }
 .tag{
-  display:inline-block; padding:8px 12px; border-radius:999px;
-  background:#1b1f26; border:1px solid var(--line); color:#cfd3de; font-weight:600;
+  display:inline-block; padding:0.3em 0.75em; border-radius:999px;
+  background:#1b1f26; border:1px solid var(--accent); color:var(--accent); font-weight:600;
+  font-size: 1.5rem;
 }
-.contact__social{
-  display:flex; gap:10px;
+
+.tag:hover {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateY(-2px);  /* lift slightly */
+  /*box-shadow: 0 4px 10px;*/
 }
+.tag:active {
+  transform: translateY(1px);  /* press down */
+  box-shadow: 0 2px 5px;
+}
+
+/* Make social row resilient too */
+.contact__social {
+  display: flex;
+  flex-wrap: wrap;         /* allow wrap on narrow screens */
+  gap: 10px;
+  min-width: 0;
+}
+
 .contact__social a{
-  display:grid; place-items:center; width:36px; height:36px;
-  border-radius:10px; background:#1b1f26; border:1px solid var(--line);
-  text-decoration:none; color:var(--muted); font-weight:800;
+  display:grid; place-items:center; width:auto; height:auto; padding: 0.3em 0.65em;
+  border-radius:10px; background:#1b1f26; border:1px solid var(--accent);
+  text-decoration:none; color:var(--accent); font-size: 1.3em; font-weight:800;
 }
 .contact .thanks{
   text-align:center; margin:16px 0 0; color:#8a91a3; font-weight:700;
+}
+
+.contact__row {
+  display: flex;
+  justify-content: flex-end; /* alt til høyre */
+  align-items: center;
+  gap: 12px; /* luft mellom tag og sosiale ikoner */
+  margin-top: 8px;
+}
+
+/* H2 + epost på samme linje */
+.contact__head {
+  display: flex;
+  justify-content: flex-start; /* holder alt til venstre */
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Footer-delen legger vi nederst i kortet */
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 100%;         /* stay inside parent */
+  overflow: hidden;        /* guard-rail for any stray overflow */
+  padding-inline: 16px;    /* optional: keep some breathing room at edges */
+  box-sizing: border-box;
+}
+
+.contact__footer {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;         /* <-- key: lets items go to next line */
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start; /* avoid pushing items off-screen */
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .contact__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.contact__footer > * {
+  min-width: 0;            /* <-- critical for flex items with intrinsic width */
+  flex: 0 1 auto;          /* allow shrinking */
+}
+
+
+
+
+.contact__footer_desc {
+  display: flex;
+  margin-top: auto;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 0.7em;
+}
+
+.contact__footer a,
+.contact__footer .thanks,
+.contact__footer_desc,
+.contact__head,
+.contact__head * {
+  overflow-wrap: anywhere; /* or: word-break: break-word; */
 }
 
 /* ===== Småting ===== */
@@ -402,15 +765,11 @@ body{
   font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
 }
 
-/*==== Slideshow ====*/
-
 /* Slideshow base */
 .slideshow {
-  --h: min(90vh, 720px);
   position: relative;
-  border-style: solid;
   border-radius: 16px;
-  border-color: var(--accent);
+  border-color: #000000;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
   overflow: hidden;
   background: var(--surface, rgba(0,0,0,.06));
@@ -421,7 +780,7 @@ body{
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 100%;
-  height: var(--h);
+  height: auto; /* <-- lar høyden styres av bildene */
   transition: transform 400ms ease;
   will-change: transform;
 }
@@ -430,17 +789,17 @@ body{
 .slide {
   margin: 0;
   position: relative;
-  height: 100%;
+  height: auto; /* <-- ikke tvunget høyde */
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto; /* image + caption */
+  grid-template-rows: auto auto; /* bilde + caption */
   overflow: hidden;
 }
 
 .slide img {
   grid-row: 1 / 2;
   width: 100%;
-  height: 100%;
-  object-fit:cover;
+  height: auto;       /* <-- behold proporsjoner */
+  object-fit: contain;/* <-- ikke crop */
   display: block;
 }
 
@@ -457,15 +816,27 @@ body{
 .slideshow .nav {
   position: absolute;
   top: 50%;
-  translate: 0 -50%;
-  z-index: 2;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
   border: 1px solid var(--line, rgba(255,255,255,0.3));
   background: rgba(0,0,0,0.45);
   color: #fff;
-  width: 38px; height: 38px;
-  border-radius: 999px;
-  display: grid; place-items: center;
   cursor: pointer;
+  z-index: 3;
+  font-size: 18px; /* juster etter smak */
+}
+
+.slideshow .nav svg,
+.slideshow .nav i,
+.slideshow .nav .icon {
+  display: block;
+  margin: auto;
 }
 
 .slideshow .nav:hover { background: rgba(0,0,0,0.6); }
@@ -502,16 +873,146 @@ a {
 
 a:hover,
 a:focus {
-  color: var(--biaccent);   /* darker on hover */
-  text-decoration: underline; /* show underline on hover */
+  color: var(--biaccent);
+  text-decoration: underline;
 }
 
 
+.about__hero{
+  inline-size: clamp(60ch, 90vw, 120ch);  /* skalerer mellom 60–120ch */
+  margin-inline: auto;
+  padding: 28px;
+  text-align: left;
+  margin-top: 5%;
+}
 
+.about__hero h1{ 
+  margin: 0 0 2rem; 
+  text-align: center;
+  font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+  font-weight: 400;
+}
 
+.about__hero p{ 
+  margin: 0; 
+  font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+  font-weight: 300;
+  text-align: left;
+}
 
+/* Rad */
+.about__me{
+  display: flex;
+  align-items: center;
+  gap: clamp(26px, 4vw, 40px);
+  max-width: min(90vw, 1100px);
+  margin: 0 auto 32px;
+  margin-top: 5%;
+  padding: 28px 0;
+  text-align:left;
+}
 
+.about__hero__i {
+  inline-size: clamp(60ch, 40vw, 120ch);  /* skalerer mellom 60–120ch */
+  margin-inline: auto;
+  padding: 28px;
+  text-align: center;
+  margin-top: 5%;
+}
 
+.about__hero__i h1 {
+  margin: 0 0 2rem; 
+  text-align: center;
+  font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+  font-weight: 400;
+}
 
+.about__hero__i p {
+  margin: 0; 
+  font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+  font-weight: 300;
+  text-align: center;
+}
+/* Flex-barn må få lov til å krympe */
+.about__me .about__me__text,
+.about__me .about__me__media{
+  min-width: 0;
+  font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+  font-weight: 300;              /* <- kritisk for at ting skal krympe */
+}
 
+/* Tekst og media-størrelser */
+.about__me .about__me__text{  
+  flex: 1 1 0; 
+}
+.about__me .about__me__media{ 
+  flex: 0 1 460px; 
+  max-width: 100%; 
+}
 
+/* Bildet må være virkelig responsivt */
+.about__me .about__me__media img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;          /* dropp denne hvis du ikke setter fast høyde */
+}
+
+/* Annenhver rad speilvendes */
+.about__me:nth-of-type(even){
+  flex-direction: row-reverse;
+}
+
+/* Mobil: en kolonne */
+@media (max-width: 800px){
+  .about__me{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about__me .about__me__media{ width: 100%; }
+}
+
+.about__icons{
+  margin: 40px auto 0;
+  max-width: min(90vw, 900px);
+}
+.about__icons-list{
+  display: flex;
+  justify-content: center;      /* center row; change to flex-start to left-align */
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+.about__icon{
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--panel-2, #1b1f26);
+  border: 1px solid var(--accent, #f0b23a);
+  color: var(--accent, #f0b23a);
+  text-decoration: none;
+  transition: transform .15s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.about__icon:hover{
+  transform: translateY(-2px);
+  background: var(--accent, #f0b23a);
+  color: var(--bg, #111);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+.about__icon:active{ transform: translateY(0); }
+.about__icon svg{
+  width: 24px;
+  height: 24px;
+  display: block;
+  fill: currentColor;
+}
+
+/* screen-reader only text */
+.sr-only{
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}

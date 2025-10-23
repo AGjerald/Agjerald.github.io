@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,186 +12,192 @@
 </head>
 <body>
   <!-- YTTERKANT / RAMME -->
-  <div class="page">
+<div class="page">
     <!-- TOPP-NAV -->
 <header class="site-header" id="site-header">
-  <div class="lang-toggle">
-    <button id="lang-btn">Norsk</button>
-  </div>
+  <!-- Logo/navn til venstre -->
+  <a href="index.html" class="logo">Anders F. Gjerald</a>
+
+  <!-- Navigasjon -->
   <nav class="nav">
-    <a href="#about"     data-en="About"     data-no="Om meg">About</a>
-    <a href="#portfolio" data-en="Portfolio" data-no="Portefølje">Portfolio</a>
-    <a href="#contact"   data-en="Contact"   data-no="Kontakt">Contact</a>
+    <a href="index.html#portfolio">Prosjekter</a>
+    <a href="about.html">Om meg</a>
+    <a href="index.html">Hjem</a>
   </nav>
+
+  <!-- Språkknapp helt til høyre -->
+<div class="lang-toggle">
+  <a class="lang-btn" href="/en/index.html" aria-label="Switch to English">EN</a>
+</div>
 </header>
 
     <!-- GRID: venstre hovedkolonne + høyre sidebar (stacker på mobil) -->
-    <main class="grid">
+<main class="grid">
       <!-- VENSTRE KOLONNE -->
-      <section aria-label="Intro and About" class="left-col">
-        <!-- HERO -->
-        <section class="hero" id="home" style="--hero-image: url('images/heroimage.png')">
-          
-          <div class="hero__text">
-            <h1><span class="muted">Anders</span> <span class="accent">F. Gjerald</span></h1>
-                <p class="role" data-html="true"
-                   data-en="Welcome to my portfolio! <br> I do interaction design."
-                   data-no="Velkommen til min portefølje! <br> Jeg driver med interaksjonsdesign.">
-                  Welcome to my portfolio! <br> I do interaction design.</p>
-                <div class="hero__cta">
-                  <button class="btn" id="contactBtn" style="font-size:2em;"
-                    data-en="Contact me!" data-no="Kontakt meg!"> Contact me!
-                  </button>
-                </div>
-          </div>
+  <section class="hero" id="home">
+    <div class="hero__text">
+      <h1>Interaksjonsdesigner med en interesse for informasjonsteknologi</h1>
+      <p class="hero__p" class="role">
+        Hei! Mitt navn er Anders og jeg holder på med interaksjonsdesign og utvikling. Nedenfor finner du mine tidligere- og pågående prosjekter, ta gjerne en kikk!
+      </p>
+    </div>
 
-          <ul class="social">
-            <li><a href="#" aria-label="Twitter">t</a></li>
-            <li><a href="#" aria-label="LinkedIn">in</a></li>
-            <li><a href="#" aria-label="GitHub">gh</a></li>
-          </ul>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about" class="card about">
-          <h2 data-en="About" data-no="Om meg">About</h2>
-          <p  data-en="Hello! I am Anders, a master’s student in Information Science with a background in Media and Interaction Design. I combine technical skills with a user-centered mindset to design and build digital solutions that are both functional and engaging. My focus lies in interaction design, web development, and creating experiences that connect people with technology in meaningful ways."
-              data-no="Hei! Jeg er Anders, masterstudent i informasjonsvitenskap med bakgrunn i medie- og interaksjonsdesign. Jeg kombinerer tekniske ferdigheter med et brukerfokusert tankesett for å designe og bygge digitale løsninger som både er funksjonelle og engasjerende. Mitt fokus ligger på interaksjonsdesign, webutvikling og å skape opplevelser som knytter mennesker og teknologi sammen på en meningsfull måte.">
-              Hello! I am Anders, a master’s student in Information Science with a background in Media and Interaction Design. I combine technical skills with a user-centered mindset to design and build digital solutions that are both functional and engaging. My focus lies in interaction design, web development, and creating experiences that connect people with technology in meaningful ways.
-          </p>
-        </section>
+    <figure class="hero__media" aria-hidden="true">
+      <img src="portrett_andersfg.png" alt="Portrett av Anders Finnebråten Gjerald">
+    </figure>
+  </section>
 
         <!-- SKILLS -->
-        <section class="card skills">
-          <h2 data-en="My Skills" data-no="Mine Ferdigheter">My Skills</h2>
-          <ul class="skill-grid" role="list">
-            <!-- Ett kort = <li>  -->
-            <li class="skill">
-            <img class="skill__icon" src="images/python-removebg-preview.png" alt="Python logo"><span>Python</span>
-            </li>
-            <li class="skill">
-              <img class="skill__icon" src="images/Figma-logo.svg.png" alt="Figma logo"><span>Figma</span>
-            </li>
-            <li class="skill">
-              <img class="skill__icon" src="images/CSS3_and_HTML5_logos_and_wordmarks.svg.png" alt="HTML and CSS logo"></span><span>HTML and CSS</span>
-            </li>
-            <li class="skill">
-              <img class="skill__icon" src="images/JavaScript-Logo.png" alt="Javascript logo"></span><span>JavaScript</span>
-            </li>
-            <li class="skill">
-              <img class="skill__icon" src="images/sql_logo.png" alt="SQL logo"></span><span>SQL</span>
-            </li>
-          </ul>
-        </section>
-      </section>
+  <section class="card skills">
+    <h2>Mine Ferdigheter</h2>
+    <ul class="skill-grid" role="list">
+      <!-- Ett kort = <li>  -->
+      <li class="skill">
+      <img class="skill__icon" src="images/python-removebg-preview.png" alt="Python logo"><span>Python</span>
+      </li>
+      <li class="skill">
+        <img class="skill__icon" src="images/Figma-logo.svg.png" alt="Figma logo"><span>Figma</span>
+      </li>
+      <li class="skill">
+        <img class="skill__icon" src="images/CSS3_and_HTML5_logos_and_wordmarks.svg.png" alt="HTML and CSS logo"></span><span>HTML og CSS</span>
+      </li>
+      <li class="skill">
+        <img class="skill__icon" src="images/JavaScript-Logo.png" alt="Javascript logo"></span><span>JavaScript</span>
+      </li>
+      <li class="skill">
+        <img class="skill__icon" src="images/sql_logo.png" alt="SQL logo"></span><span>SQL</span>
+      </li>
+    </ul>
+  </section>
+</section>
 
       <!-- HØYRE KOLONNE -->
       <aside class="right-col">
         <!-- PORTFOLIO -->
-        <section id="portfolio" class="card portfolio">
-          <div class="card__head">
-            <h2 data-en="Portfolio" data-no="Portefølje">Portfolio</h2>
-            <div class="dots" aria-hidden="true">• • •</div>
-          </div>
+<section id="portfolio" class="card portfolio">
+  <div class="card__head">
+    <h2>Portefølje</h2>
+    
+  </div>
 
-          <div class="portfolio__grid">
-            <!-- Bytt ut bilder/titler etter behov -->
-            <a class="shot" href="project_springbrettet.html" aria-label="Springrettet - website">
-              <img src="images/springbrettet_svg.svg" alt="Springbrettet logo" />
-              <span class="shot__badge"data-en="Springbrettet - Website" data-no="Springbrettet - Nettside">Springbrettet - Website</span>
-            </a>
-            <a class="shot" href="project_tunnelsyn.html">
-              <img src="images/tunnelsyn1.png" alt="Image inside Tunnelsyn, a museum installation" />
-              <span class="shot__badge" data-en="Tunnelsyn - Museum installation" data-no="Tunnelsyn - Museums installasjon">Tunnelsyn - Museum Installation</span>
-            </a>
-            <a class="shot" href="project_cue.html">
-              <img src="\images\cue_svg.svg" alt="Image of the prototype Cue" />
-              <span class="shot__badge" data-en="Cue - Figma prototype" data-no="Cue - Figma prototype">Cue - Figma prototype</span>
-            </a>
-            <a class="shot" href="project_kvikk.html">
-              <img src="\images/kvikk_svg.svg" alt="Image of Kvikk insurance' homepage" />
-              <span class="shot__badge" data-en="Kvikk insurance - Website & App" data-no="Springbrettet - Nettside & App">Kvikk insurance - Website & App</span>
-            </a>
-            <a class="shot" href="project_veganbros.html">
-              <img src="images/vb_svg.svg" alt="" />
-              <span class="shot__badge" data-en="Veganbros - Website" data-no="Veganbros - Nettside">Veganbros - Website</span>
-            </a>
-          </div>
-        </section>
+  <div class="portfolio__grid">
+    <a class="shot" href="project_springbrettet.html" aria-label="Springrettet - website">
+      <img src="images/sb_portfolio_grid.svg" alt="Springbrettet logo" />
+      <span class="shot__badge">Springbrettet – Nettside</span>
+    </a>
+    <a class="shot" href="project_tunnelsyn.html">
+      <img src="images/tunnelsyn1.png" alt="Image inside Tunnelsyn, a museum installation" />
+      <span class="shot__badge">Tunnelsyn – Museumsinstallasjon</span>
+    </a>
+    <a class="shot" href="project_cue.html">
+      <img src="\images/Landing page footer.svg" alt="Image of the prototype Cue" />
+      <span class="shot__badge">Cue – Figma-prototype</span>
+    </a>
+    <a class="shot" href="project_kvikk.html">
+      <img src="\images/kvikk_portfolio_grid.svg" alt="Image of Kvikk insurance' homepage" />
+      <span class="shot__badge">Kvikk Insurance – Nettside og app</span>
+    </a>
+    <a class="shot" href="project_veganbros.html">
+      <img src="images/vb_svg.svg" alt="" />
+      <span class="shot__badge">Vegan Bros – Nettside</span>
+    </a>
+  </div>
+</section>
 
-        <!-- EXPERIENCE (tidslinje) -->
-        <section class="card experience">
-          <h2 data-en="Education & experience" data-no="Utdanning & erfaring">Education & experience</h2>
+<!-- EXPERIENCE (tidslinje) -->
+<section class="timeline-section card">
+  <div class="card__head">
+    <h2>Utdanning & erfaring</h2>
+  </div>
 
-          <article class="xp">
-            <div class="xp__year">2025</div>
-            <div class="xp__body">
-              <h3 data-en="Started mastersprogram in Informational Science" data-no="Startet masterprogrammet innen informasjonsvitenskap">Started mastersprogram in Informational Science</h3>
-              <p class="xp__meta" data-en="Bergen, Norway" data-no="Bergen, Norge">Bergen, Norway</p>
-              <p data-html=true data-en="Started my mastersprogram within Informational Science with the intent on sharpening my skills in the broader spectre <br> of information technology, researching information systems, backend structure and human-computer interaction." 
-                data-no="Jeg startet på masterprogrammet i informasjonsvitenskap med mål om å skjerpe ferdighetene mine innen det bredere spekteret av informasjonsteknologi, med forskning på informasjonssystemer, backend-strukturer og menneske–maskin-interaksjon.">
-                Started my mastersprogram within Informational Science with the intent on sharpening my skills in the broader spectre <br> of information technology, researching information systems, backend structure and human-computer interaction.
-              </p>
-            </div>
-          </article>
+  <div class="timeline">
+    <!-- ITEM 1 -->
+    <div class="timeline-item" data-year="2025">
+      <div class="timeline-img"></div>
+      <div class="timeline-content js--fadeInLeft">
+        <h3>Startet masterprogrammet innen informasjonsvitenskap | Universitetet i Bergen</h3>
+        <p class="xp__meta">Bergen, Norge</p>
+        <p data-html=true>
+         Jeg startet på masterprogrammet i informasjonsvitenskap med mål om å skjerpe ferdighetene mine innen det bredere spekteret av informasjonsteknologi, med forskning på informasjonssystemer, backend-strukturer og menneske–maskin-interaksjon.
+        </p>
+      </div>
+    </div>
 
-          <article class="xp">
-            <div class="xp__year">2024</div>
-            <div class="xp__body">
-              <h3 data-en="Completed B.A. in Media and Interactiondesign" data-no="Fullførte bachelor i medie- og interaksjonsdesign">
-                Completed B.A. in Media and Interactiondesign
-              </h3>
-              <p class="xp__meta" data-en="Bergen, Norway" data-no="Bergen, Norge">Bergen, Norway</p>
-              <p data-html="true" 
-                 data-en="Bachelor’s degree in Media and Interaction Design from the University of Bergen, with a strong foundation in <br> human–computer interaction, user experience, and interaction design. The program provided hands-on experience <br> with diverse cases in workflow and design thinking, guiding projects from initial sketches through to functional <br> prototypes and finished products."
-                 data-no="Bachelorgrad i medie- og interaksjonsdesign fra Universitetet i Bergen, med et solid fundament i <br> menneske–maskin-interaksjon, brukeropplevelse og interaksjonsdesign. Studiet ga praktisk erfaring <br> gjennom ulike case innen arbeidsflyt og design thinking, med prosjekter fra de første skissene <br> til funksjonelle prototyper og ferdige produkter.">
-                Bachelor’s degree in Media and Interaction Design from the University of Bergen, with a strong foundation in <br> 
-                human–computer interaction, user experience, and interaction design. The program provided hands-on experience <br> 
-                with diverse cases in workflow and design thinking, guiding projects from initial sketches through to functional <br> 
-                prototypes and finished products.
-              </p>
-            </div>
-          </article>
-          
-          <article class="xp">
-            <div class="xp__year">2021</div>
-            <div class="xp__body">
-              <h3 data-en="Completed a year course in Media & Communication" data-no="Fullførte årsstudium i medier og kommunikasjon">
-                Completed a year course in Media & Communication
-              </h3>
-              <p class="xp__meta" data-en="Bergen, Norway" data-no="Bergen, Norge">Bergen, Norway</p>
-              <p data-en="Finished a year course in Media and Communication at the University of Bergen." 
-                 data-no="Fullførte et årsstudium i medier og kommunikasjon ved Universitetet i Bergen.">
-                Finished a year course in Media and Communication at the University of Bergen.
-              </p>
-            </div>
-          </article>
-        </section>
+    <!-- ITEM 2 -->
+    <div class="timeline-item" data-year="2024">
+      <div class="timeline-img"></div>
+      <div class="timeline-content js--fadeInRight">
+        <h3>
+          Fullførte bachelor i medie- og interaksjonsdesign | Universitet i Bergen
+        </h3>
+        <p class="xp__meta">Bergen, Norge</p>
+        <p data-html="true">
+          Bachelorgrad i medie- og interaksjonsdesign fra Universitetet i Bergen, med et solid fundament i menneske–maskin-interaksjon, brukeropplevelse og interaksjonsdesign. 
+          Studiet ga praktisk erfaring gjennom ulike case innen arbeidsflyt og design thinking, med prosjekter fra de første skissene <br> til funksjonelle prototyper og ferdige produkter.
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="timeline-item" data-year="2022">
+      <div class="timeline-img"></div>
+      <div class="timeline-content js--fadeInLeft">
+        <h3>
+          Fullførte årsstudium i medier og kommunikasjon | Universitetet i Bergen
+        </h3>
+        <p class="xp__meta">Bergen, Norge</p>
+        <p>
+          Fullførte et årsstudium i medier og kommunikasjon ved Universitetet i Bergen.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
         <!-- CONTACT -->
         <section id="contact" class="card contact">
-          <h2 data-en="Contact Me!" data-no="Ta kontakt!">Contact Me!</h2>
-          <ul class="contact__list" role="list">
-            <li><span class="tag">andersgjerald@gmail.com</span></li>
-            <li><span class="tag">+47 46 89 84 59</span></li>
-            <li><span class="tag">Bergen, Norway</span></li>
-          </ul>
-
-          <div class="contact__social">
-            <a href="https://x.com/agjerald" aria-label="Twitter">t</a>
-            <a href="https://linkedin.com/in/andersfgjerald" aria-label="LinkedIn">in</a>
-            <a href="https://github.com/AGjerald" aria-label="GitHub">gh</a>
+          <div class="contact__head">
+            <h2>Slå av en prat!</h2>
+            
           </div>
-
-          <p class="thanks" data-en="Thanks for scrolling!" data-no="Takk for at du scrollet igjennom!">Thanks for Scrolling</p>
+          <div class="contact__footer">
+            <ul class="about__icons-list" role="list">
+              <li>
+                <a class="about__icon" href="mailto:andersgjerald@gmail.com" aria-label="Send me an email">
+                  <!-- Mail -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2
+                  2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8l8 7 8-7v10H4Z"/></svg>
+                  <span class="sr-only">Email</span>
+                </a>
+              </li>
+              <li>
+                <a class="about__icon" href="https://linkedin.com/in/andersfgjerald" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <!-- LinkedIn -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8.5h4V23h-4V8.5Zm7.5 0h3.83v1.98h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.09V23h-4v-5.9c0-1.41-.03-3.22-1.96-3.22-1.96 0-2.26 1.53-2.26 3.12V23h-4V8.5Z"/></svg>
+                  <span class="sr-only">LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a class="about__icon" href="https://github.com/AGjerald" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <!-- GitHub -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58l-.02-2.27c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.35-1.75-1.35-1.75-1.1-.76.08-.75.08-.75 1.22.09 1.87 1.27 1.87 1.27 1.08 1.85 2.84 1.32 3.53 1.01.11-.79.42-1.32.76-1.63-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.23 0 4.63-2.8 5.66-5.48 5.96.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+                  <span class="sr-only">GitHub</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </section>
       </aside>
     </main>
   </div>
 
   <footer class="tiny">
-    <p>© <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.</p>
+
+    <p>© <span id="y"></span> Anders Finnebråten Gjerald — Alle rettigheter reservert.</p>
   </footer>
+
+  
   <script src="script.js" defer></script>
 </body>
+
 </html>

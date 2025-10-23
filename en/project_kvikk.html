@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project | Kvikk Insurance — App and Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<div class="page">
+<header class="site-header" id="site-header">
+  <a href="/en/index.html" class="logo">Anders F. Gjerald</a>
+  <nav class="nav">
+    <a href="/en/index.html#portfolio">Projects</a>
+    <a href="/en/about.html">About me</a>
+    <a href="/en/index.html">Home</a>
+  </nav>
+  <div class="lang-toggle"><a class="lang-btn" href="/project_kvikk.html" aria-label="Switch to Norwegian">NO</a></div>
+</header>
+
+<main class="grid">
+  <section class="project_hero" style="--hero-image: url('/images/kvikk_nettside.png'); --hero-opacity:0.8;">
+    <h1 class="hero_inset">Project | Kvikk Insurance — App and Website</h1>
+    <ul class="project_tools" aria-label="Technologies used" style="padding-left: 5vw">
+      <li>Webflow</li><li>Figma</li>
+    </ul>
+  </section>
+
+  <section id="project_intro" class="project_site card">
+    <h2>The Project</h2>
+    <p>
+      <i>Kvikk Insurance</i> is an on-demand insurance start-up. During its rebranding phase, I contributed to both app and web design.
+      Together with the CEO, I worked on redesigning the user experience and visual identity in Figma, resulting in a viable MVP for investors and stakeholders.
+    </p>
+    <p>
+      Later I also redesigned their website to match the updated visual identity from the app. They used the website builder “Webflow” to design and host the site.
+    </p>
+    <p><span>Check out the website</span> <a href="https://www.kvikkforsikring.no/" target="_blank" rel="noopener noreferrer">here!</a></p>
+  </section>
+
+  <section id="project_snippets" class="project_site card">
+    <h2 id="snippets-title">Snippets from the app and website</h2>
+    <div class="slideshow" role="region" aria-labelledby="snippets-title" aria-label="Project screenshots">
+      <div class="slides" data-index="0">
+        <figure class="slide">
+          <img src="/images/kvikk1_2032_1124.svg" alt="Kvikk App screen 1" loading="lazy">
+          <figcaption>Kvikk App</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/kvikk2_2032_1124.svg" alt="Kvikk App screen 2" loading="lazy">
+          <figcaption>Kvikk App</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/kvikk3_2032_1124.svg" alt="Kvikk website landing page" loading="lazy">
+          <figcaption>Kvikk website — landing page.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/kvikk4_2032_1124.svg" alt="Kvikk website inner page" loading="lazy">
+          <figcaption>Kvikk website.</figcaption>
+        </figure>
+      </div>
+      <button class="nav prev" aria-label="Previous slide">‹</button>
+      <button class="nav next" aria-label="Next slide">›</button>
+      <div class="dots" role="tablist" aria-label="Slide navigation"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="tiny">
+  <p>© <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.</p>
+</footer>
+<script src="/script.js" defer></script>
+</div>
+</body>
+</html>

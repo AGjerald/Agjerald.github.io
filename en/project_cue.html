@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project | Cue – Figma Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<div class="page">
+<header class="site-header" id="site-header">
+  <a href="/en/index.html" class="logo">Anders F. Gjerald</a>
+  <nav class="nav">
+    <a href="/en/index.html#portfolio">Projects</a>
+    <a href="/en/about.html">About me</a>
+    <a href="/en/index.html">Home</a>
+  </nav>
+  <div class="lang-toggle"><a class="lang-btn" href="/project_cue.html" aria-label="Switch to Norwegian">NO</a></div>
+</header>
+
+<main class="grid">
+  <section class="project_hero" style="--hero-image: url('/images/cue_pose.png'); --hero-opacity:0.8;">
+    <h1 class="hero_inset">Project | Cue – Figma Prototype</h1>
+    <ul class="project_tools" aria-label="Technologies used" role="list" style="padding-left: 5vw">
+      <li>Figma</li>
+    </ul>
+  </section>
+
+  <section id="project_intro" class="project_site card">
+    <h2>The Project</h2>
+    <p>
+      <i>“Cue”</i> was a student group project carried out as part of the MIX202 course at the University of Bergen.
+      The prototype aimed to create a tool that supports people who struggle with social interaction and daily tasks.
+      It introduced multiple search methods—sketch, position, text, and voice—to ensure accessibility and universal design.
+      The prototype also included mini-games that let users practice everyday social interactions.
+      The design and UX were intentionally kept simple to serve people with disabilities or social anxiety.
+    </p>
+    <p>
+      The project was based on an assignment to explore video retrieval technology—a method for retrieving media, such as videos or images, from a predefined database.
+      The technology relies on text search or speech-to-text. We wanted to apply this in a realistic scenario, which led to Cue—an interactive tool for practicing social signals.
+    </p>
+    <p>
+      <span>See the prototype</span>
+      <a href="https://www.figma.com/proto/EhBsDKueoREaZWGqrFPzvV/Cue?node-id=728-3417&p=f&t=Uxp2kKbyF0rU6HkO-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A2166&starting-point-node-id=232%3A2311" target="_blank" rel="noopener noreferrer">here!</a>
+    </p>
+  </section>
+
+  <section id="project_snippets" class="project_site card">
+    <h2 id="snippets-title">Snippets from the Prototype</h2>
+    <div class="slideshow" role="region" aria-labelledby="snippets-title">
+      <div class="slides" data-index="0">
+        <figure class="slide">
+          <img src="/images/cue1_2032_1124.svg" alt="Landing page with hero and CTA" loading="lazy">
+          <figcaption>Sketch search that lets you search with drawings.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/cue2_2032_1124.svg" alt="About page layout with timeline" loading="lazy">
+          <figcaption>Mini-game for practicing recognition of body language.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/cue3_2032_1124.svg" alt="Contact form and map embed" loading="lazy">
+          <figcaption>Full Motion Video game for practicing real-life scenarios.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/cue4_2032_1124.svg" alt="Contact form and map embed" loading="lazy">
+          <figcaption>“Your goals” page where the user selects which goals to practice.</figcaption>
+        </figure>
+      </div>
+      <button class="nav prev" aria-label="Previous slide">‹</button>
+      <button class="nav next" aria-label="Next slide">›</button>
+      <div class="dots" role="tablist" aria-label="Slide navigation"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="tiny">
+  <p>© <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.</p>
+</footer>
+<script src="/script.js" defer></script>
+</div>
+</body>
+</html>

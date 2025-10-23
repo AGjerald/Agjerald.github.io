@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project | Vegan Bros — Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<div class="page">
+<header class="site-header" id="site-header">
+  <a href="/en/index.html" class="logo">Anders F. Gjerald</a>
+  <nav class="nav">
+    <a href="/en/index.html#portfolio">Projects</a>
+    <a href="/en/about.html">About me</a>
+    <a href="/en/index.html">Home</a>
+  </nav>
+  <div class="lang-toggle"><a class="lang-btn" href="/project_veganbros.html" aria-label="Switch to Norwegian">NO</a></div>
+</header>
+
+<main class="grid">
+  <section class="project_hero" style="--hero-image: url('/images/vbvb.PNG'); --hero-opacity:0.8;">
+    <h1 class="hero_inset">Project | Vegan Bros — Website</h1>
+    <ul class="project_tools" aria-label="Technologies used" style="padding-left: 5vw">
+      <li>HTML &amp; CSS</li><li>JavaScript</li><li>Figma</li>
+    </ul>
+  </section>
+
+  <section id="project_intro" class="project_site card">
+    <h2>The Project</h2>
+    <p>
+      The group project <i>“Vegan Bros”</i> was part of the web development course MIX114.
+      The course introduced us to front-end by building a website from scratch.
+      We worked with a fictitious client who provided guidelines and design wishes.
+      Over a few months we gathered insight, ideated, and built a site for the imagined customer.
+    </p>
+    <p>
+      We leaned on a personal style with hand-drawn illustrations to create a distinct identity.
+      With that in mind, we designed each page to feel like scrolling posters.
+    </p>
+    <p>
+      <span>Check out the website</span>
+      <a href="https://agjerald.github.io/veganbros/index.html" target="_blank" rel="noopener noreferrer">here!</a>
+    </p>
+  </section>
+
+  <section id="project_snippets" class="project_site card">
+    <h2 id="snippets-title">Snippets from the website</h2>
+    <div class="slideshow" role="region" aria-labelledby="snippets-title" aria-label="Project screenshots">
+      <div class="slides" data-index="0">
+        <figure class="slide">
+          <img src="/images/vb1_2032_1124.svg" alt="Vegan Bros website — landing page with hero and call to action" loading="lazy">
+          <figcaption>Landing page with hero and CTA.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/vb2_2032_1124.svg" alt="Vegan Bros website — alternative landing section" loading="lazy">
+          <figcaption>Alternative landing section.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/vb3_2032_1124.svg" alt="Vegan Bros website — About us page" loading="lazy">
+          <figcaption>About us page.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/vb4_2032_1124.svg" alt="Vegan Bros website — Booking page" loading="lazy">
+          <figcaption>Booking page.</figcaption>
+        </figure>
+      </div>
+      <button class="nav prev" aria-label="Previous slide">‹</button>
+      <button class="nav next" aria-label="Next slide">›</button>
+      <div class="dots" role="tablist" aria-label="Slide navigation"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="tiny">
+  <p>© <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.</p>
+</footer>
+<script src="/script.js" defer></script>
+</div>
+</body>
+</html>
+
+
+
+
+
+

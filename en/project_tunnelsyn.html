@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project | Tunnelsyn — Museum Installation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="page">
+<header class="site-header" id="site-header">
+  <a href="/en/index.html" class="logo">Anders F. Gjerald</a>
+  <nav class="nav">
+    <a href="/en/index.html#portfolio">Projects</a>
+    <a href="/en/about.html">About me</a>
+    <a href="/en/index.html">Home</a>
+  </nav>
+  <div class="lang-toggle"><a class="lang-btn" href="/project_tunnelsyn.html" aria-label="Switch to Norwegian">NO</a></div>
+</header>
+
+<main class="grid">
+  <section class="project_hero" style="--hero-image: url('/images/tunnelsyn1.png'); --hero-opacity:0.8;">
+    <h1 class="hero_inset">Project | Tunnelsyn — Museum Installation</h1>
+    <div>
+      <ul class="project_tools" aria-label="Technologies used" style="padding-left: 5vw">
+        <li>Figma</li><li>Python</li><li>Raspberry Pi</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="project_intro" class="project_site card">
+    <h2>The Project</h2>
+    <p>
+      The large-scale project <i>“Tunnelsyn”</i> was completed as part of my final B.A. exam in Media & Interaction Design. It was one of five installations in the exhibition <a href="https://www.universitetsmuseet.no/nb/utstilling/528/ambivalent-intelligens" target="_blank" rel="noopener noreferrer"><i>“Ambivalent Intelligence”</i></a>. Tunnelsyn lets visitors experience news media shaped by AI. Several screens—each powered by a Raspberry Pi and an ultrasonic sensor—reacted as visitors walked by, changing the content to create an interactive experience. Within the team we split the work between physical and digital design; I was project lead.
+    </p>
+    <p>
+      Our goal was to highlight both the positive and negative sides of artificial intelligence and its impact on society. In short, Tunnelsyn focused on emerging image- and video-generative AI tools. We wanted to show both the fascinating and the problematic aspects as this technology permeates more and more media forms.
+    </p>
+    <p>
+      Before the build we collaborated with <a href="https://mediacitybergen.no/reynir/" target="_blank" rel="noopener noreferrer"><i>“Reynir”</i></a>, an established project in the field. Through Reynir we gained insight into past, current, and future challenges related to generative AI in news and media—especially misinformation. Our installation aimed to surface these issues and point to potential mitigations—enter Reynir.
+    </p>
+    <p>
+      <span>Learn more about the installation</span>
+      <a href="https://teklab.uib.no/artikler/tunnelsyn/" target="_blank" rel="noopener noreferrer">here!</a>
+    </p>
+  </section>
+
+  <section id="project_making" class="project_site card">
+    <h2 id="snippets-title">The Making of Tunnelsyn</h2>
+    <div class="slideshow" role="region" aria-labelledby="snippets-title" aria-label="Project screenshots">
+      <div class="slides" data-index="0">
+        <figure class="slide">
+          <img src="/images/ts1_2032_1124.svg" alt="Early storyboard for Tunnelsyn" loading="lazy">
+          <figcaption>Early storyboard for Tunnelsyn.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/ts2_2032_1124.svg" alt="Production of the physical installation at the University Museum" loading="lazy">
+          <figcaption>Production of the physical installation at the University Museum.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/ts3_2032_1124.svg" alt="Completed installation with all screens and sensors active" loading="lazy">
+          <figcaption>Finished installation with all screens and sensors running.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="/images/ts4_2032_1124.svg" alt="Inside the installation showing the screens" loading="lazy">
+          <figcaption>A look inside the installation showcasing all screens.</figcaption>
+        </figure>
+      </div>
+      <button class="nav prev" aria-label="Previous slide">‹</button>
+      <button class="nav next" aria-label="Next slide">›</button>
+      <div class="dots" role="tablist" aria-label="Slide navigation"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="tiny">
+  <p>© <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.</p>
+</footer>
+</div>
+<script src="/script.js" defer></script>
+</body>
+</html>
+
+

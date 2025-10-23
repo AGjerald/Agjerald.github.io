@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Bruk buttonens egne data-attributter som kilde hvis de finnes
       const nextLabel =
         (lang === "en")
-          ? (langBtn.getAttribute("data-en") || "Norsk")
-          : (langBtn.getAttribute("data-no") || "English");
+          ? (langBtn.getAttribute("data-en") || "NO")
+          : (langBtn.getAttribute("data-no") || "EN");
       langBtn.textContent = nextLabel;
     }
 
@@ -136,9 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     let index = 0;
-    const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+    const wrap = (i, len) => (i + len) % len;
     const setIndex = (i, { focusDot = false } = {}) => {
-      index = clamp(i, 0, slides.length - 1);
+      index = wrap(i, slides.length);                   // <-- loop
       track.style.transform = `translateX(${-index * 100}%)`;
       dots.forEach((d, idx) => {
         const sel = idx === index;
@@ -186,3 +186,22 @@ document.addEventListener("DOMContentLoaded", () => {
     setIndex(0);
   }
 });
+/*Hamburger menu*/ 
+ (function(){
+    const btn = document.querySelector('[data-nav-toggle]');
+    const nav = document.getElementById('site-nav');
+    if(!btn || !nav) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Optional: close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!nav.classList.contains('open')) return;
+      if (e.target.closest('.hamburger') || e.target.closest('.nav')) return;
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  })();

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,83 +12,79 @@
 <body>
   <div class="page">
     <!-- TOPP-NAV -->
-    <header class="site-header" id="site-header">
-      <div class="lang-toggle">
-        <button id="lang-btn" data-en="Norsk" data-no="English">Norsk</button>
-      </div>
-      <nav class="nav">
-        <a href="index.html#portfolio" data-en="Portfolio" data-no="Portefølje">Portfolio</a>
-        <a href="contact.html"   data-en="Contact"   data-no="Kontakt">Contact</a>
-      </nav>
-    </header>
+<header class="site-header" id="site-header">
+  <!-- Logo/navn til venstre -->
+  <a href="index.html" class="logo">Anders F. Gjerald</a>
+
+  <!-- Navigasjon -->
+  <nav class="nav">
+    <a href="index.html#portfolio">Prosjekter</a>
+    <a href="about.html">Om meg</a>
+    <a href="index.html">Hjem</a>
+  </nav>
+
+  <!-- Språkknapp helt til høyre -->
+<div class="lang-toggle">
+  <a class="lang-btn" href="/en/project_kvikk.html" aria-label="Switch to English">EN</a>
+</div>
+</header>
 
     <main class="grid">
       <!-- HERO -->
-      <section class="hero" style="--hero-image: url('images/kvikk_nettside.png'); --hero-opacity:0.8;">
-        <h1 class="hero_inset"
-            data-en="Project | Kvikk Insurance — App and website"
-            data-no="Prosjekt | Kvikk Insurance — App og nettside">
-          Project | Kvikk Insurance — App and website
+      <section class="project_hero" style="--hero-image: url('images/kvikk_nettside.png'); --hero-opacity:0.8;">
+        <h1 class="hero_inset">
+          Prosjekt | Kvikk Insurance — App og nettside
         </h1>
         <ul class="project_tools" aria-label="Technologies used" style="padding-left: 5vw">
-          <li data-en="Webflow" data-no="Webflow">Webflow</li>
-          <li data-en="Figma"   data-no="Figma">Figma</li>
+          <li>Webflow</li>
+          <li>Figma</li>
         </ul>
       </section>
 
       <!-- INTRO -->
       <section id="project_intro" class="project_site card">
-        <h2 data-en="The project" data-no="Prosjektet">The project</h2>
+        <h2>Prosjektet</h2>
 
-        <p data-html
-           data-en='<i>Kvikk Insurance</i> is an on-demand insurance start-up. During its rebranding phase, I had the opportunity to contribute to both app and web design. Together with the CEO, I worked on redesigning the user experience and visual identity of the app in Figma, resulting in a viable MVP to present to investors and stakeholders.' 
-           data-no='<i>Kvikk Insurance</i> er en on-demand forsikringsstart-up. I deres rebranding-fase fikk jeg bidra til både app- og webdesign. Sammen med daglig leder redesignet jeg brukeropplevelsen og den visuelle identiteten i Figma, noe som resulterte i en fungerende MVP til investorer og interessenter.'>
-          <i>Kvikk Insurance</i> is an on-demand insurance start-up. During its rebranding phase, I had the opportunity to contribute to both app and web design. Together with the CEO, I worked on redesigning the user experience and visual identity of the app in Figma, resulting in a viable MVP to present to investors and stakeholders.
+        <p data-html>
+          <i>Kvikk Forsikring</i> er en on-demand forsikringsstart-up. I deres rebranding-fase fikk jeg bidra til både app- og webdesign. Sammen med daglig leder redesignet jeg brukeropplevelsen og den visuelle identiteten i Figma, noe som resulterte i en fungerende MVP til investorer og interessenter.
         </p>
 
-        <p data-html
-           data-en='Later on I again got the opportunity to redesign their website to meet the newly adopted visual identity of the app. They used the website builder “Webflow” to design and host the site.' 
-           data-no='Senere fikk jeg på nytt muligheten til å redesigne nettsiden i tråd med den oppdaterte visuelle identiteten fra appen. De brukte nettstedbyggeren «Webflow» til å designe og hoste siden.'>
-                          Later on I again got the opportunity to redesign their website to meet the newly adapted visual identity of the app. They utilized the website builder "Webflow" to design and host the site. 
+        <p data-html>
+          Senere fikk jeg på nytt muligheten til å redesigne nettsiden i tråd med den oppdaterte visuelle identiteten fra appen. De brukte nettstedbyggeren «Webflow» til å designe og hoste siden.
         </p>
 
         <p>
-          <span data-en="Check out the website" data-no="Se nettsiden her">Check out the website</span>
-          <a href="https://www.kvikkforsikring.no/" target="_blank" rel="noopener noreferrer"
-             data-en="here!" data-no="her!">here!</a>
+          <span>Se nettsiden</span>
+          <a href="https://www.kvikkforsikring.no/" target="_blank" rel="noopener noreferrer">her!</a>
         </p>
       </section>
 
       <!-- SNIPPETS / SLIDESHOW -->
       <section id="project_snippets" class="project_site card">
-        <h2 id="snippets-title"
-            data-en="Snippets from the app and website"
-            data-no="Utdrag fra app og nettside">
-          Snippets from the app and website
+        <h2 id="snippets-title">
+          Utdrag fra app og nettside
         </h2>
 
         <div class="slideshow" role="region" aria-labelledby="snippets-title" aria-label="Project screenshots">
           <div class="slides" data-index="0">
             <figure class="slide">
-              <img src="images/k_app1.svg" alt="Kvikk App screen 1" loading="lazy">
-              <figcaption data-en="Kvikk App" data-no="Kvikk-appen">Kvikk App</figcaption>
+              <img src="images/kvikk1_2032_1124.svg" alt="Kvikk App screen 1" loading="lazy">
+              <figcaption>Kvikk-appen</figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/k_app2.svg" alt="Kvikk App screen 2" loading="lazy">
-              <figcaption data-en="Kvikk App" data-no="Kvikk-appen">Kvikk App</figcaption>
+              <img src="images/kvikk2_2032_1124.svg" alt="Kvikk App screen 2" loading="lazy">
+              <figcaption>Kvikk-appen</figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/kn3.png" alt="Kvikk website landing page" loading="lazy">
-              <figcaption data-en="Kvikk website landing page" data-no="Kvikk nettside — landingsside">
-                Kvikk website landing page.
-              </figcaption>
+              <img src="images/kvikk3_2032_1124.svg" alt="Kvikk website landing page" loading="lazy">
+              <figcaption>Kvikk nettside — landingsside.</figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/kn1.png" alt="Kvikk website inner page" loading="lazy">
-              <figcaption data-en="Kvikk website" data-no="Kvikk nettside">Kvikk website.</figcaption>
+              <img src="images/kvikk4_2032_1124.svg" alt="Kvikk website inner page" loading="lazy">
+              <figcaption>Kvikk nettside.</figcaption>
             </figure>
           </div>
 
@@ -102,9 +98,8 @@
     </main>
 
     <footer class="tiny">
-      <p data-en="© Anders Finnebråten Gjerald — All rights reserved."
-         data-no="© Anders Finnebråten Gjerald — Alle rettigheter reservert.">
-        © <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.
+      <p>
+        © <span id="y"></span> Anders Finnebråten Gjerald — Alle rettigheter reservert.
       </p>
     </footer>
   </div>
@@ -113,10 +108,3 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-

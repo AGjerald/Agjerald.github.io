@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,96 +12,88 @@
 <body>
   <div class="page">
     <!-- TOPP-NAV -->
-    <header class="site-header" id="site-header">
-      <div class="lang-toggle">
-        <button id="lang-btn" data-en="Norsk" data-no="English">Norsk</button>
-      </div>
-      <nav class="nav">
-        <a href="index.html#portfolio" data-en="Portfolio" data-no="Portefølje">Portfolio</a>
-        <a href="contact.html"   data-en="Contact"   data-no="Kontakt">Contact</a>
-      </nav>
-    </header>
+<header class="site-header" id="site-header">
+  <!-- Logo/navn til venstre -->
+  <a href="index.html" class="logo">Anders F. Gjerald</a>
+
+  <!-- Navigasjon -->
+  <nav class="nav">
+    <a href="index.html#portfolio">Prosjekter</a>
+    <a href="about.html">Om meg</a>
+    <a href="index.html">Hjem</a>
+  </nav>
+
+  <!-- Språkknapp helt til høyre -->
+ <div class="lang-toggle">
+  <a class="lang-btn" href="/en/project_springbrettet.html" aria-label="Switch to English">EN</a>
+</div>
+</header>
 
     <main class="grid">
       <!-- HERO -->
-      <section class="hero" style="--hero-image: url('images/SpringbrettetForsideNy.PNG'); --hero-opacity:0.8;">
-        <h1 class="hero_inset"
-            data-en="Project | Springbrettet — Website"
-            data-no="Prosjekt | Springbrettet — Nettside">
-          Project | Springbrettet — Website
+      <section class="project_hero" style="--hero-image: url('images/SpringbrettetForsideNy.PNG'); --hero-opacity:0.8;">
+        <h1 class="hero_inset">
+          Prosjekt | Springbrettet — Nettside
         </h1>
         <ul class="project_tools" aria-label="Technologies used" style="padding-left: 5vw">
-          <li data-en="HTML &amp; CSS" data-no="HTML &amp; CSS">HTML &amp; CSS</li>
-          <li data-en="JavaScript"     data-no="JavaScript">JavaScript</li>
-          <li data-en="SquareSpace"    data-no="SquareSpace">SquareSpace</li>
-          <li data-en="Figma"          data-no="Figma">Figma</li>
+          <li>HTML &amp; CSS</li>
+          <li>JavaScript</li>
+          <li>SquareSpace</li>
+          <li>Figma</li>
         </ul>
       </section>
 
       <!-- INTRO -->
       <section id="project_intro" class="project_site card">
-        <h2 data-en="The project" data-no="Prosjektet">The project</h2>
+        <h2>Prosjektet</h2>
 
-        <p data-html
-           data-en='The student organization <i>“Springbrettet”</i> aims to reduce the distance between students and potential employers. I was recruited as a web developer and was given creative freedom to design and develop the site in line with the organization’s goals and identity.'
-           data-no='Studentorganisasjonen <i>«Springbrettet»</i> har som mål å redusere avstanden mellom studenter og potensielle arbeidsgivere. Jeg ble rekruttert som webutvikler og fikk stor frihet til å designe og utvikle siden i tråd med organisasjonens mål og identitet.'>
-          <i>"Springbrettet"</i> is a student organization that aims to reduce the distance between students and potential employers.
-                I was recruited into the organization as a webdeveloper and received creative freedom to design and develop the site however i saw fitting, within the organizations goals and identity.
+        <p data-html>
+          Studentorganisasjonen <i>«Springbrettet»</i> har som mål å redusere avstanden mellom studenter og potensielle arbeidsgivere. Jeg ble rekruttert som webutvikler og fikk stor frihet til å designe og utvikle nettsiden i tråd med organisasjonens mål og identitet.
         </p>
 
-        <p data-html
-           data-en='The site is built and hosted on the drag-and-drop tool SquareSpace. Although development is fast with such a tool, I added custom HTML, CSS, and JavaScript to implement interactive, dynamic, self-made components.'
-           data-no='Nettsiden er bygget og driftet på dra-og-slipp-verktøyet SquareSpace. Selv om utviklingen går raskt med et slikt verktøy, la jeg inn egen HTML, CSS og JavaScript for å implementere interaktive, dynamiske og egenutviklede komponenter.'>
-          The site is based and hosted on the drag-and-drop web-building tool SquareSpace. Although webdevelopment is fast and easy with a tool such 
-                as Squarespace, I used the opportunity to add own HTML, CSS and JavaScript to implement interactive, dynamic and self-made elements to the design.
+        <p data-html>
+          Nettsiden er bygget og driftet på dra-og-slipp-verktøyet SquareSpace. Selv om utviklingen går raskt med et slikt verktøy, la jeg inn egen HTML, CSS og JavaScript for å implementere interaktive, dynamiske og egenutviklede komponenter.
         </p>
 
         <p>
-          <span data-en="Check out the website" data-no="Se nettsiden her">Check out the website</span>
-          <a href="https://springbrettet.org/" target="_blank" rel="noopener noreferrer"
-             data-en="here!" data-no="her!">here!</a>
+          <span>Se nettsiden</span>
+          <a href="https://springbrettet.org/" target="_blank" rel="noopener noreferrer">her!</a>
         </p>
       </section>
 
       <!-- SNIPPETS / SLIDESHOW -->
       <section id="project_snippets" class="project_site card">
-        <h2 id="snippets-title"
-            data-en="Snippets from the website"
-            data-no="Utdrag fra nettsiden">
-          Snippets from the website
+        <h2 id="snippets-title">
+          Utdrag fra nettsiden
         </h2>
 
         <div class="slideshow" role="region" aria-labelledby="snippets-title" aria-label="Project screenshots">
           <div class="slides" data-index="0">
             <figure class="slide">
-              <img src="images/SpringbrettetForsideNy.PNG" alt="Springbrettet website — landing page with hero and call to action" loading="lazy">
-              <figcaption data-en="Landing page with hero and CTA."
-                          data-no="Landingsside med hero og CTA.">
-                Landing page with hero and CTA.
+              <img src="images/sb1_2032_1124.svg" alt="Springbrettet website — landing page with hero and call to action" loading="lazy">
+              <figcaption>
+                Landingsside med hero og CTA.
               </figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/sbkd2.PNG" alt="Recruitment page listing all roles in Springbrettet" loading="lazy">
-              <figcaption data-en="Recruitment page listing all enlistments in Springbrettet."
-                          data-no="Rekrutteringsside som viser alle verv i Springbrettet.">
-                Recruitment page listing all enlistments in Springbrettet.
+              <img src="images/sb2_2032_1124.svg" alt="Recruitment page listing all roles in Springbrettet" loading="lazy">
+              <figcaption>
+                Rekrutteringsside som viser alle verv i Springbrettet.
               </figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/karrierestudio.png" alt="Project page for the organization’s podcast Karrierestudio" loading="lazy">
-              <figcaption data-en='Project page for the organization’s podcast "Karrierestudio".'
-                          data-no='Prosjektside for organisasjonens podkast «Karrierestudio».'>
-                Project page for the organization’s podcast "Karrierestudio".
+              <img src="images/sb3_2032_1124.svg" alt="Project page for the organization’s podcast Karrierestudio" loading="lazy">
+              <figcaption>
+                Prosjektside for organisasjonens podkast «Karrierestudio».
               </figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/sbkd1.png" alt="Another project page from the Springbrettet website" loading="lazy">
-              <figcaption data-en='Project page from the Springbrettet website.'
-                          data-no='Prosjektside fra Springbrettet-nettsiden.'>
-                Project page from the Springbrettet website.
+              <img src="images/sb4_2032_1124.svg" alt="Another project page from the Springbrettet website" loading="lazy">
+              <figcaption>
+                Prosjektside fra Springbrettet-nettsiden.
               </figcaption>
             </figure>
           </div>
@@ -116,9 +108,8 @@
     </main>
 
     <footer class="tiny">
-      <p data-en="© Anders Finnebråten Gjerald — All rights reserved."
-         data-no="© Anders Finnebråten Gjerald — Alle rettigheter reservert.">
-        © <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.
+      <p>
+        © <span id="y"></span> Anders Finnebråten Gjerald — Alle rettigheter reservert.
       </p>
     </footer>
   </div>
@@ -126,12 +117,5 @@
   <!-- Felles script som håndterer språkbytte, sticky header og slideshow-init -->
   <script src="script.js" defer></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

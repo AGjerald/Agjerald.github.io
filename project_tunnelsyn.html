@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,103 +12,93 @@
 <body>
   <div class="page">
     <!-- TOP NAV -->
-    <header class="site-header" id="site-header">
-      <div class="lang-toggle">
-        <button id="lang-btn" data-en="Norsk" data-no="English">Norsk</button>
-      </div>
-      <nav class="nav">
-        <a href="index.html#portfolio" data-en="Portfolio" data-no="Portefølje">Portfolio</a>
-        <a href="contact.html"   data-en="Contact"   data-no="Kontakt">Contact</a>
-      </nav>
-    </header>
+<header class="site-header" id="site-header">
+  <!-- Logo/navn til venstre -->
+  <a href="index.html" class="logo">Anders F. Gjerald</a>
+
+  <!-- Navigasjon -->
+  <nav class="nav">
+    <a href="index.html#portfolio">Prosjekter</a>
+    <a href="about.html">Om meg</a>
+    <a href="index.html">Hjem</a>
+  </nav>
+
+  <!-- Språkknapp helt til høyre -->
+ <div class="lang-toggle">
+  <a class="lang-btn" href="/en/project_tunnelsyn.html" aria-label="Switch to English">EN</a>
+</div>
+</header>
 
     <main class="grid">
       <!-- HERO -->
-      <section class="hero" style="--hero-image: url('images/tunnelsyn1.png'); --hero-opacity:0.8;">
-        <h1 class="hero_inset"
-            data-en="Project | Tunnelsyn — Museum Installation"
-            data-no="Prosjekt | Tunnelsyn — Museumsinstallasjon">
-          Project | Tunnelsyn — Museum Installation
+      <section class="project_hero" style="--hero-image: url('images/tunnelsyn1.png'); --hero-opacity:0.8;">
+        <h1 class="hero_inset">
+          Prosjekt | Tunnelsyn — Museumsinstallasjon
         </h1>
+        <div>
         <ul class="project_tools" aria-label="Technologies used" style="padding-left: 5vw">
-          <li data-en="Figma"       data-no="Figma">Figma</li>
-          <li data-en="Python"      data-no="Python">Python</li>
-          <li data-en="Raspberry Pi" data-no="Raspberry Pi">Raspberry Pi</li>
+          <li>Figma</li>
+          <li>Python</li>
+          <li>Raspberry Pi</li>
         </ul>
+        </div>
       </section>
 
       <!-- INTRO -->
       <section id="project_intro" class="project_site card">
-        <h2 data-en="The project" data-no="Prosjektet">The project</h2>
+        <h2>Prosjektet</h2>
 
-        <p data-html
-           data-en='The large-scale group project <i>“Tunnelsyn”</i> was completed as part of my final bachelor’s exam in Media and Interaction Design. It was one of five installations in the exhibition <a href="https://www.universitetsmuseet.no/nb/utstilling/528/ambivalent-intelligens" target="_blank" rel="noopener noreferrer"><i>“Ambivalent Intelligence”</i></a>. Tunnelsyn immerses visitors in news media shaped by AI. Multiple screens—each powered by a Raspberry Pi and an ultrasonic sensor—reacted as visitors passed by, triggering content changes and creating an interactive experience. Within the team we split work between physical and digital design; I served as project lead.'
-           data-no='Storprosjektet <i>«Tunnelsyn»</i> ble gjennomført som del av min avsluttende bachelor­eksamen i medie- og interaksjonsdesign. Det var én av fem installasjoner i utstillingen <a href="https://www.universitetsmuseet.no/nb/utstilling/528/ambivalent-intelligens" target="_blank" rel="noopener noreferrer"><i>«Ambivalent Intelligence»</i></a>. Tunnelsyn lar publikum oppleve nyhetsmedier formet av KI. Flere skjermer – hver drevet av en Raspberry Pi og en ultralydsensor – reagerte når besøkende gikk forbi, og endret innholdet for å skape en interaktiv opplevelse. I gruppa delte vi arbeidet mellom fysisk og digital design; jeg var prosjektleder.'>
-          <i>"Tunnelsyn"</i> was a large-scale group project completed as part of my final bachelor’s exam in Media and Interaction Design. Tunnelsyn was one out of five intallments that was part of the exhibition <a href="https://www.universitetsmuseet.no/nb/utstilling/528/ambivalent-intelligens" target="_blank" rel="noopener noreferrer"><i>"Ambivalent Intelligence"</i></a>.
-                Tunnelsyn is an installation designed to immerse visitors in the world of news media shaped by AI. It featured multiple screens, each powered by a Raspberry Pi and an ultrasonic sensor. As visitors passed by, the sensors triggered the Raspberry Pi to change the content displayed on the screens, creating an interactive experience.
-                In the group we divided the roles roughly between physical design and digital design, whereas I had the project lead.
+        <p data-html>
+          Storprosjektet <i>«Tunnelsyn»</i> ble gjennomført som del av min avsluttende bachelor­eksamen i medie- og interaksjonsdesign. Det var én av fem installasjoner i utstillingen <a href="https://www.universitetsmuseet.no/nb/utstilling/528/ambivalent-intelligens" target="_blank" rel="noopener noreferrer"><i>«Ambivalent Intelligence»</i></a>. Tunnelsyn lar publikum oppleve nyhetsmedier formet av KI. Flere skjermer – hver drevet av en Raspberry Pi og en ultralydsensor – reagerte når besøkende gikk forbi, og endret innholdet for å skape en interaktiv opplevelse. I gruppa delte vi arbeidet mellom fysisk og digital design; jeg var prosjektleder.
         </p>
 
-        <p data-html
-           data-en='The idea was to highlight both the positive and negative sides of artificial intelligence and its impact on society. In short, Tunnelsyn focused on emerging image- and video-generative AI tools. We wanted to show both the fascinating and the problematic aspects as this technology permeates media of all kinds.'
-           data-no='Målet var å belyse både de positive og negative sidene ved kunstig intelligens og dens påvirkning på samfunnet. Kort fortalt fokuserte Tunnelsyn på fremvoksende bilde- og videogenererende KI-verktøy. Vi ønsket å vise både det fascinerende og det problematiske, ettersom teknologien preger stadig flere medieformer.'>
-                The thought behind the exhibition is to showcase the many positive and negative sides with artificial intelligence, and its influence on our society. Tunnelsyn is in short terms an intallment meant to shed light on the up and coming image- and video generative AI tools. 
-                With this project we wanted to showcase both the fasciniating and problematic side of this technology, as it permeates our lives through all sorts of media. 
+        <p data-html>
+          Målet var å belyse både de positive og negative sidene ved kunstig intelligens og dens påvirkning på samfunnet. Kort fortalt fokuserte Tunnelsyn på fremvoksende bilde- og videogenererende KI-verktøy. Vi ønsket å vise både det fascinerende og det problematiske, ettersom teknologien preger stadig flere medieformer.
         </p>
 
-        <p data-html
-           data-en='Ahead of the build we collaborated with <a href="https://mediacitybergen.no/reynir/" target="_blank" rel="noopener noreferrer"><i>“Reynir”</i></a>, an established project in the field. Through Project Reynir we gained insight into past, current, and future challenges of generative AI in news and media—especially misinformation. Our installation aimed to surface these issues, and also point to potential mitigations—enter Reynir.'
-           data-no='I forkant samarbeidet vi med <a href="https://mediacitybergen.no/reynir/" target="_blank" rel="noopener noreferrer"><i>«Reynir»</i></a>, et etablert prosjekt i feltet. Via Reynir fikk vi innsikt i tidligere, nåværende og fremtidige utfordringer knyttet til generativ KI i nyheter og media – særlig desinformasjon. Installasjonen vår skulle både synliggjøre problemene og peke mot mulige tiltak – her kom Reynir inn.'>
-            As part of the build up to this projects we teamed up with an established project in the field, called <a href="https://mediacitybergen.no/reynir/" target="_blank" rel="noopener noreferrer"><i>"Reynir".</i></a>
-            Through Project Reynir we got insights in past, current and future issues in the field of image/video generetive AI in the media- and news field - especailly focusing on misinformation. Our installation wanted to showcase the issues we may encounter because of this new technology, but we also wanted to introduce some solutions — enter Reynir. 
+        <p data-html>
+          I forkant samarbeidet vi med <a href="https://mediacitybergen.no/reynir/" target="_blank" rel="noopener noreferrer"><i>«Reynir»</i></a>, et etablert prosjekt i feltet. Via Reynir fikk vi innsikt i tidligere, nåværende og fremtidige utfordringer knyttet til generativ KI i nyheter og media – særlig desinformasjon. Installasjonen vår skulle både synliggjøre problemene og peke mot mulige tiltak – her kom Reynir inn.
         </p>
 
         <p>
-          <span data-en="Learn more about the installation" data-no="Les mer om installasjonen">Learn more about the installation</span>
-          <a href="https://teklab.uib.no/artikler/tunnelsyn/" target="_blank" rel="noopener noreferrer"
-             data-en="here!" data-no="her!">here!</a>
+          <span>Les mer om installasjonen</span>
+          <a href="https://teklab.uib.no/artikler/tunnelsyn/" target="_blank" rel="noopener noreferrer">her!</a>
         </p>
       </section>
 
       <!-- MAKING OF / SLIDESHOW -->
       <section id="project_making" class="project_site card">
-        <h2 id="snippets-title"
-            data-en="The making of Tunnelsyn"
-            data-no="Slik lagde vi Tunnelsyn">
-          The making of Tunnelsyn
+        <h2 id="snippets-title">
+          Slik lagde vi Tunnelsyn
         </h2>
 
         <div class="slideshow" role="region" aria-labelledby="snippets-title" aria-label="Project screenshots">
           <div class="slides" data-index="0">
             <figure class="slide">
-              <img src="images/tunnelsyn_storyboard2.0.jpg" alt="Early storyboard for Tunnelsyn" loading="lazy">
-              <figcaption data-en="Early storyboard of Tunnelsyn."
-                          data-no="Tidlig storyboard for Tunnelsyn.">
-                Early storyboard of Tunnelsyn.
+              <img src="images/ts1_2032_1124.svg" alt="Early storyboard for Tunnelsyn" loading="lazy">
+              <figcaption>
+                Tidlig storyboard for Tunnelsyn.
               </figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/tunnelsyn_prod.jpg" alt="Production of the physical installation at the University Museum" loading="lazy">
-              <figcaption data-en="Production of the physical installation at the University Museum."
-                          data-no="Produksjon av den fysiske installasjonen ved Universitetsmuseet.">
-                Production of the physical installation at the University Museum.
+              <img src="images/ts2_2032_1124.svg" alt="Production of the physical installation at the University Museum" loading="lazy">
+              <figcaption>
+                Produksjon av den fysiske installasjonen ved Universitetsmuseet.
               </figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/tunnelsyn_3.jpg" alt="Completed installation with all screens and sensors active" loading="lazy">
-              <figcaption data-en="Refined, finished installation with all screens and sensors active."
-                          data-no="Ferdig installasjon med alle skjermer og sensorer i drift.">
-                Refined, finished installation with all screens and sensors active.
+              <img src="images/ts3_2032_1124.svg" alt="Completed installation with all screens and sensors active" loading="lazy">
+              <figcaption>
+                Ferdig installasjon med alle skjermer og sensorer i drift.
               </figcaption>
             </figure>
 
             <figure class="slide">
-              <img src="images/Tunnelsyn_2.jpg" alt="Inside the installation showing the screens" loading="lazy">
-              <figcaption data-en="A look inside the installation showcasing all screens."
-                          data-no="Et innblikk i installasjonen som viser skjermene.">
-                A look inside the installation showcasing all screens.
+              <img src="images/ts4_2032_1124.svg" alt="Inside the installation showing the screens" loading="lazy">
+              <figcaption>
+                Et innblikk i installasjonen som viser skjermene.
               </figcaption>
             </figure>
           </div>
@@ -123,9 +113,8 @@
     </main>
 
     <footer class="tiny">
-      <p data-en="© Anders Finnebråten Gjerald — All rights reserved."
-         data-no="© Anders Finnebråten Gjerald — Alle rettigheter reservert.">
-        © <span id="y"></span> Anders Finnebråten Gjerald — All rights reserved.
+      <p>
+        © <span id="y"></span> Anders Finnebråten Gjerald — Alle rettigheter reservert.
       </p>
     </footer>
   </div>
@@ -134,5 +123,4 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-
 
