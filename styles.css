@@ -672,7 +672,7 @@ body{
   /* Høyre kort: venstrekant "limes" til midtlinjen */
   .timeline-item:nth-child(even) .timeline-content{
     left: calc(50% - (var(--dot-size) / 2) - var(--year-gap));
-    transform: translateX(-25%);      /* ikke dra ut av bildet */
+    transform: translateX(-55%);      /* ikke dra ut av bildet */
   }
 
 
