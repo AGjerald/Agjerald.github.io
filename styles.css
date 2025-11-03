@@ -586,12 +586,6 @@ body{
   text-align: left;
 }
 
-@media (max-width:560px){
-  .timeline-item:nth-child(odd)::after{
-    text-align: right;
-  }
-}
-
 /* Even = høyre kort → år til venstre for dot */
 .timeline-item:nth-child(even)::after{
   left: calc(50% - (var(--dot-size) / 2) - var(--year-gap));
@@ -669,11 +663,11 @@ body{
     position: relative;
     float: none;
     box-sizing: border-box;
-    padding: 14px 18px;
     /* Viktig: aldri bredere enn halv skjerm − gap − litt luft */
     --gap: var(--center-gap, 12px);
     width: min(360px, calc(50vw - var(--gap) - 16px));
     max-width: 90vw;               /* nødløsning hvis 50vw blir knapt */
+    font-size: x-small;
   }
 
   /* Venstre kort: høyrekant "limes" til midtlinjen */
@@ -685,7 +679,7 @@ body{
   /* Høyre kort: venstrekant "limes" til midtlinjen */
   .timeline-item:nth-child(even) .timeline-content{
     left: calc(50% - (var(--dot-size) / 2) - var(--year-gap));
-    transform: translateX(-45%);      /* ikke dra ut av bildet */
+    transform: translateX(-25%);      /* ikke dra ut av bildet */
   }
   .timeline-item:nth-child(even)::after{
   left: calc(50% - (var(--dot-size) / 2) - var(--year-gap));
