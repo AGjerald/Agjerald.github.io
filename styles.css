@@ -81,25 +81,62 @@ body{
   color: inherit; /* arver fargen fra header */
 }
 
+.nav{ 
+  display:flex;
+  align-items:flex-end; 
+  gap:50px;
+  font-size: clamp(1rem, 1.4vh, 1.4rem);
+}
+
+.nav a{
+  color:var(--muted); text-decoration:none; font-weight:600;
+}
+.nav a:hover{ color:var(--text) }
+
+.lang-toggle {
+  padding: 12px 24px;
+}
+
+.lang-toggle .lang-btn {
+  display: inline-block;
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.lang-toggle .lang-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
 .hamburger{
-  display:none;
+  display:none;                     /* vises i media query under */
   width:42px; height:42px;
   border:1px solid var(--line);
-  background:#1b1f26;
+  background:#f8f8f8 url('images/burger-menu-svgrepo-com.svg') center / 22px no-repeat;
   border-radius:10px;
   cursor:pointer;
-  align-items:center; justify-content:center; gap:5px; padding:8px;
-  z-index:1300; /* over nav dropdown */
+  align-items:center; justify-content:center;
+  padding:0;                        /* null – vi bruker bg, ikke spans */
+  z-index:1300;
 }
-.hamburger__bar{ display:block; 
-  width:100%; 
-  height:2px; 
-  background:
-  var(--accent); }
+
+/* Bytt til "lukk"-ikon når menyen er åpen (JS setter aria-expanded="true") */
+.hamburger[aria-expanded="true"]{
+  background-image: url('images/close-svgrepo-com.svg');
+}
+
+/* Skjul de tre strekene hvis de fortsatt ligger i HTML */
+.hamburger__bar{ display:none; }
 
 .nav{ display:flex; 
   align-items:flex-end; 
-  gap:48px; 
+  
   font-size: clamp(1rem, 1.4vh, 1.4rem); 
 }
 
@@ -128,7 +165,10 @@ body{
   }
    .nav a{ padding:6px 4px; }
 
-
+  .lang-toggle .lang-btn{
+    padding: 5px 30px;
+    font-size: 1rem;
+  }
   /* Put the lang button inside the dropdown on mobile */
   .lang-toggle{ padding:0; }
   .lang-toggle button{
@@ -145,7 +185,6 @@ body{
     position: static;
     display:flex;
     flex-direction:row;
-    gap:48px;
     background: transparent;
     border:none;
     border-radius:0;
@@ -158,43 +197,8 @@ body{
   }
 }
 
-.nav{ 
-  display:flex;
-  align-items:flex-end; 
-  gap:48px; 
-  font-size: clamp(1rem, 1.4vh, 1.4rem);
-}
 
 
-
-  /*display: flex;
-  gap: 24px;
-  font-size: 1.4em;
-  margin-right: 0;  */
-.nav a{
-  color:var(--muted); text-decoration:none; font-weight:600;
-}
-.nav a:hover{ color:var(--text) }
-
-.lang-toggle {
-  padding: 12px 24px;
-}
-
-.lang-toggle button {
-  background: none;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  padding: 5px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  font-size: 1.2rem;
-}
-
-.lang-toggle button:hover {
-  background: var(--accent);
-  color: #fff;
-}
 
 /* ===== Grid-layout (to kolonner på større skjermer) ===== */
 .grid{
@@ -1081,12 +1085,36 @@ a:focus {
 }
 
 /* Mobil: en kolonne */
-@media (max-width: 800px){
+/* @media (max-width: 815px){
+  .about__hero{
+    inline-size: clamp(20ch, 90vw, 40ch)
+  }
+} */
+@media (max-width:1043px){
+  .about__me:nth-of-type(even){
+    flex-direction: column-reverse;}
   .about__me{
-    flex-direction: column;
+    flex-direction:column;
+    align-items: flex-start;
+    align-items: center;
+  }
+  .about__me__media{
+    width: 60%;
+  }
+}
+@media (max-width: 400px){
+  .about__me{
+    flex-direction:column;
     align-items: flex-start;
   }
+  .about__hero{
+    inline-size: clamp(35ch, 40vw, 95ch);
+  }
+  .about__hero__i{
+    inline-size: clamp(35ch, 40vw, 120ch);
+  }
   .about__me .about__me__media{ width: 100%; }
+  
 }
 
 .about__icons{

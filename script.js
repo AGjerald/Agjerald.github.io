@@ -187,21 +187,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 /*Hamburger menu*/ 
- (function(){
-    const btn = document.querySelector('[data-nav-toggle]');
-    const nav = document.getElementById('site-nav');
-    if(!btn || !nav) return;
+ document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
 
-    btn.addEventListener('click', () => {
+    if (!burger || !nav) return;
+
+    // Toggle
+    burger.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(isOpen));
+      burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    // Optional: close when clicking outside
+    // Lukk når man klikker utenfor
     document.addEventListener('click', (e) => {
       if (!nav.classList.contains('open')) return;
-      if (e.target.closest('.hamburger') || e.target.closest('.nav')) return;
-      nav.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+      const clickedInside = nav.contains(e.target) || burger.contains(e.target);
+      if (!clickedInside) {
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
     });
-  })();
+
+    // Lukk med Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });

@@ -15,37 +15,45 @@
 <div class="page">
     <!-- TOP NAV -->
 <header class="site-header" id="site-header">
-  <!-- Logo/name to the left -->
-  <a href="/en/index.html" class="logo">Anders F. Gjerald</a>
+  <!-- Logo/navn til venstre -->
+  <a href="index.html" class="logo">Anders F. Gjerald</a>
+  
+<!-- Hamburger (vises på mobil) -->
+  <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+    <span class="hamburger__bar"></span>
+    <span class="hamburger__bar"></span>
+    <span class="hamburger__bar"></span>
+  </button>
 
-  <!-- Navigation -->
-  <nav class="nav">
+  <!-- Navigasjon (dropdown på mobil, inline på desktop) -->
+  <nav class="nav" id="site-nav">
     <a href="/en/index.html#portfolio">Projects</a>
     <a href="/en/about.html">About me</a>
     <a href="/en/index.html">Home</a>
+    <!-- Språkknapp flyttet INN i nav for mobil -->
+    <div class="lang-toggle">
+      <a class="lang-btn" href="index.html" aria-label="Switch to Norwegian">NO</a>
+    </div>
   </nav>
-
-  <!-- Language toggle on the far right -->
-<div class="lang-toggle">
-  <a class="lang-btn" href="/index.html" aria-label="Switch to Norwegian">NO</a>
-</div>
 </header>
 
     <!-- GRID: left main column + right sidebar (stacks on mobile) -->
 <main class="grid">
-      <!-- LEFT COLUMN -->
-  <section class="hero" id="home">
-    <div class="hero__text">
-      <h1>Interaction designer with an interest in information technology</h1>
-      <p class="hero__p" class="role">
-        Hi! My name is Anders and I work with interaction design and development. Below you’ll find my past and ongoing projects—feel free to take a look!
-      </p>
-    </div>
+      <!-- VENSTRE KOLONNE -->
+<section class="hero hero--split">
+  <div class="hero__text">
+    <p class="kicker">Anders F. Gjerald</p>
+    <h1>Product designer &<br> no-code developer</h1>
+    <p>
+      Jeg skaper brukersentrerte løsninger med fokus på tydelig struktur,
+      tilgjengelighet og høy ytelse. Utforsk porteføljen min for å se hvordan jeg løser komplekse designutfordringer.
+    </p>
+  </div>
 
-    <figure class="hero__media" aria-hidden="true">
-      <img src="/portrett_andersfg.png" alt="Portrait of Anders Finnebråten Gjerald">
-    </figure>
-  </section>
+  <div class="hero__media">
+        <img src="/images/portrett_andersfg.jpg" alt="Portrait of Anders" class="hero__img">
+  </div>
+</section>
 
         <!-- SKILLS -->
   <section class="card skills">

@@ -15,18 +15,24 @@
 <header class="site-header" id="site-header">
   <!-- Logo/navn til venstre -->
   <a href="index.html" class="logo">Anders F. Gjerald</a>
+  
+<!-- Hamburger (vises på mobil) -->
+  <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+    <span class="hamburger__bar"></span>
+    <span class="hamburger__bar"></span>
+    <span class="hamburger__bar"></span>
+  </button>
 
-  <!-- Navigasjon -->
-  <nav class="nav">
+  <!-- Navigasjon (dropdown på mobil, inline på desktop) -->
+  <nav class="nav" id="site-nav">
     <a href="index.html#portfolio">Prosjekter</a>
     <a href="about.html">Om meg</a>
     <a href="index.html">Hjem</a>
+    <!-- Språkknapp flyttet INN i nav for mobil -->
+    <div class="lang-toggle">
+      <a class="lang-btn" href="/en/project_veganbros.html" aria-label="Switch to English">EN</a>
+    </div>
   </nav>
-
-  <!-- Språkknapp helt til høyre -->
-<div class="lang-toggle">
-  <a class="lang-btn" href="/en/project_veganbros.html" aria-label="Switch to English">EN</a>
-</div>
 </header>
 
     <main class="grid">

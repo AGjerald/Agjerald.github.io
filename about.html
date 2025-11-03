@@ -17,18 +17,24 @@
 <header class="site-header" id="site-header">
   <!-- Logo/navn til venstre -->
   <a href="index.html" class="logo">Anders F. Gjerald</a>
+  
+<!-- Hamburger (vises på mobil) -->
+  <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+    <span class="hamburger__bar"></span>
+    <span class="hamburger__bar"></span>
+    <span class="hamburger__bar"></span>
+  </button>
 
-  <!-- Navigasjon -->
-  <nav class="nav">
+  <!-- Navigasjon (dropdown på mobil, inline på desktop) -->
+  <nav class="nav" id="site-nav">
     <a href="index.html#portfolio">Prosjekter</a>
     <a href="about.html">Om meg</a>
     <a href="index.html">Hjem</a>
+    <!-- Språkknapp flyttet INN i nav for mobil -->
+    <div class="lang-toggle">
+      <a class="lang-btn" href="/en/about.html" aria-label="Switch to English">EN</a>
+    </div>
   </nav>
-
-  <!-- Språkknapp helt til høyre -->
-  <div class="lang-toggle">
-  <a class="lang-btn" href="/en/about.html" aria-label="Switch to English">EN</a>
-</div>
 </header>
 
 <main>
@@ -64,21 +70,6 @@
         Cue (Figma-prototype for trening på sosiale signaler), Vegan Bros (nettsted og identitet), og to år som webutvikler i Springbrettet. 
         Verktøy: Figma, HTML/CSS/JS, litt Python/SQL og Webflow. 
         Jeg liker å dokumentere beslutninger, sette opp design-tokens og komponenter, og måle effekten av endringer.
-      </p>
-    </div>
-    <div class="about__me__media">
-      <img src="images/cue_1.png" alt="Cue-prototype">
-    </div>
-  </section>
-
-  <section class="about__me">
-    <div class="about__me__text">
-      <p>
-        Vil du prate? Send en e-post til <a href="mailto:andersgjerald@gmail.com">andersgjerald@gmail.com</a>, 
-        eller ta kontakt på LinkedIn <a href="https://linkedin.com/in/andersfgjerald" target="_blank" rel="noopener noreferrer">/in/andersfgjerald</a>.  
-        Kode finner du på <a href="https://github.com/AGjerald" target="_blank" rel="noopener noreferrer">github.com/AGjerald</a>.  
-        Åpen for prosjekter, internships og deltidsoppdrag – i Bergen, hybrid eller remote.  
-        Jeg svarer kort og ærlig.
       </p>
     </div>
     <div class="about__me__media">

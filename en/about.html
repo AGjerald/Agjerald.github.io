@@ -12,13 +12,26 @@
 <body>
 <div class="page">
 <header class="site-header" id="site-header">
-  <a href="/en/index.html" class="logo">Anders F. Gjerald</a>
-  <nav class="nav">
+  <!-- Logo/navn til venstre -->
+  <a href="index.html" class="logo">Anders F. Gjerald</a>
+  
+<!-- Hamburger (vises på mobil) -->
+  <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+    <span class="hamburger__bar"></span>
+    <span class="hamburger__bar"></span>
+    <span class="hamburger__bar"></span>
+  </button>
+
+  <!-- Navigasjon (dropdown på mobil, inline på desktop) -->
+  <nav class="nav" id="site-nav">
     <a href="/en/index.html#portfolio">Projects</a>
     <a href="/en/about.html">About me</a>
     <a href="/en/index.html">Home</a>
+    <!-- Språkknapp flyttet INN i nav for mobil -->
+    <div class="lang-toggle">
+      <a class="lang-btn" href="about.html" aria-label="Switch to English">NO</a>
+    </div>
   </nav>
-  <div class="lang-toggle"><a class="lang-btn" href="/about.html" aria-label="Switch to Norwegian">NO</a></div>
 </header>
 
 <main>
@@ -53,21 +66,6 @@
         Cue (Figma prototype for practicing social signals), Vegan Bros (website/identity), and two years as a web developer at Springbrettet.
         Tools: Figma, HTML/CSS/JS, some Python/SQL, and Webflow.
         I like documenting decisions, setting up design tokens/components, and measuring the impact of changes.
-      </p>
-    </div>
-    <div class="about__me__media">
-      <img src="/images/cue_1.png" alt="Cue prototype">
-    </div>
-  </section>
-
-  <section class="about__me">
-    <div class="about__me__text">
-      <p>
-        Want to chat? Email <a href="mailto:andersgjerald@gmail.com">andersgjerald@gmail.com</a>,
-        or connect on LinkedIn <a href="https://linkedin.com/in/andersfgjerald" target="_blank" rel="noopener noreferrer">/in/andersfgjerald</a>.
-        Code lives on <a href="https://github.com/AGjerald" target="_blank" rel="noopener noreferrer">github.com/AGjerald</a>.
-        Open to projects, internships, and part-time work—Bergen, hybrid, or remote.
-        I reply briefly and honestly.
       </p>
     </div>
     <div class="about__me__media">
