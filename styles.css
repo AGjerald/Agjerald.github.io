@@ -300,7 +300,7 @@ body{
   pointer-events: none;      /* så bildet ikke stjeler klikk */
 }
 
-@media (max-width: 900px){
+@media (max-width: 1200px){
   .hero__media{
     position: static;
     transform: none;
@@ -386,7 +386,7 @@ body{
   object-fit:cover;
 }
 
-@media (max-width:1318px){
+@media (max-width:1200px){
   .hero__media{
     right: clamp(12px, 5vw, 10px);
   }
@@ -394,7 +394,7 @@ body{
 }
 
 /* Responsiv: stack og del bakgrunn topp/bunn for bedre lesbarhet */
-@media (max-width: 820px){
+@media (max-width: 1200px){
   .hero--split .hero__inner{
     grid-template-columns: 1fr;
   }
