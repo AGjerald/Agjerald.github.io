@@ -1008,15 +1008,21 @@ a:focus {
   margin: clamp(24px, 6vh, 80px) auto;
   padding: 0 clamp(12px, 3vw, 24px);
   text-align: left;
-  margin-bottom: clamp(200px, 10vh, 120px);
+  margin-bottom: clamp(100px, 10vh, 200px);
 }
 
 .about__hero:first-of-type h1{
   margin: 0 0 .6em;
   font-size: clamp(2rem, 5vw, 5rem);
+  line-height: 1.35;
+  font-weight: 500;
+  font-style:oblique;
+}
+.about__hero:first-of-type h2{
+  margin-left:10%;
+  font-size: clamp(1rem, 5vw, 2rem);
   line-height: 1.05;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 400;
 }
 
 .about__hero:first-of-type p{
@@ -1067,6 +1073,7 @@ a:focus {
   margin: 24px auto 0;
   padding: 0 clamp(12px, 3vw, 24px);
 }
+
 .about__hero:nth-of-type(2) p{
   font-size: clamp(1rem, 0.6vw + 1rem, 1.2rem);
   line-height: 1.7;
@@ -1078,10 +1085,8 @@ a:focus {
   display: flex;
   align-items: center;
   gap: clamp(26px, 4vw, 40px);
-  max-width: min(90vw, 1100px);
+  max-width: min(90vw, 1000px);
   margin: 0 auto 32px;
-  margin-top: 5%;
-  padding: 28px 0;
   text-align: left;
 }
 
@@ -1090,6 +1095,11 @@ a:focus {
   min-width: 0;
   font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
   font-weight: 300;
+}
+
+.about__me__text h2{
+  font-weight: 400;
+  font-size: clamp(1rem, 2vw + 1rem, 2rem);
 }
 
 .about__me .about__me__text{ flex: 1 1 0; }
@@ -1181,4 +1191,87 @@ a:focus {
 .sr-only{
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* Container rundt seksjonen */
+.about__me__text {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about__me__text h2{
+  font-size: clamp(1rem, 2vw + 1rem, 2rem);
+}
+
+/* Det store kortet (en kategori som utdanning/erfaring) */
+.info-card {
+  background: var(--panel, #1e1e2f);
+  border-radius: 16px;
+  padding: 0rem 2rem 2rem 2rem;
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Seksjonstittel ("Utdanning", "Erfaring") */
+.info-card__section-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--biaccent, #f9a825);
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Enkeltinnslag (år + tittel + tekst) */
+.info-entry {
+  margin-bottom: 2rem;
+}
+
+/* År */
+.info-entry__year {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--accent, #f9a825);
+  margin-bottom: 0.3rem;
+}
+
+/* Tittel på utdanning/rolle */
+.info-entry__title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Skillelinje */
+.info-entry__divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0.5rem 0;
+}
+
+/* Brødtekst / beskrivelse */
+.info-entry__body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+  .info-card {
+    padding: 1.5rem;
+  }
+
+  .info-card__section-title {
+    font-size: 1.3rem;
+  }
+
+  .info-entry__title {
+    font-size: 1.05rem;
+  }
+
+  .info-entry__body {
+    font-size: 0.95rem;
+  }
 }
