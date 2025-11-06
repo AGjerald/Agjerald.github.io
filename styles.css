@@ -1016,7 +1016,7 @@ a:focus {
   font-size: clamp(2rem, 5vw, 5rem);
   line-height: 1.35;
   font-weight: 500;
-  font-style:oblique;
+  letter-spacing: -0.25rem;
 }
 .about__hero:first-of-type h2{
   margin-left:10%;
@@ -1200,10 +1200,23 @@ a:focus {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
 .about__me__text h2{
+  font-size: clamp(1rem, 2vw + 1rem, 2rem);
+}
+
+.about__me__text__cards{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1 1 0;
+}
+
+.about__me__text__cards h2{
   font-size: clamp(1rem, 2vw + 1rem, 2rem);
 }
 
