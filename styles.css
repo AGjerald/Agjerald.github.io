@@ -22,7 +22,9 @@
 }
 
 *{ box-sizing:border-box }
-html,body{ height:100% }
+html,body{ 
+  height:100%;
+ }
 body{
   margin:0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -1055,16 +1057,24 @@ a:focus {
 .about__hero__media .img-main{
   position: relative;
   z-index: 1;
+  width: min(36vw, 520px);
 }
 
 /* lite overlappende bilde (nede til høyre) */
 .about__hero__media .img-secondary{
   position: absolute;
-  bottom: -55%;
-  right: -50%;
-  width: 45%;
   z-index: 2;
-  width: min(36vw, 320px);
+  right:  clamp(-60px, -8vw, -120px);
+  bottom: clamp(-120px, -6vw, -120px);
+  width:  clamp(100px, 35%, 320px);
+  transform: translate(8%, 8%);
+  display: block;
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px -18px rgba(0,0,0,.5);
+  
 }
 
 /* === Hero tekstblokk (nr. 2) — uendret, lett justert === */
@@ -1157,6 +1167,13 @@ a:focus {
 .about__icon:active{ transform: translateY(0); }
 .about__icon svg{ width: 24px; height: 24px; display: block; fill: currentColor; }
 
+/* DEFAULT: skjul bunnbildene på desktop */
+.mobile-bottom-images{
+  display: none;
+  max-width: min(1000px, 92vw);
+  margin: 24px auto 0;
+} 
+
 /* === Responsivitet === */
 @media (max-width: 1043px){
   .about__me:nth-of-type(even){ flex-direction: column-reverse; }
@@ -1164,20 +1181,39 @@ a:focus {
   .about__me__media{ width: 60%; }
 }
 
+/* === Mobil: flytt (ved å vise kopi) bildene til bunn, side-ved-side === */
 @media (max-width: 900px){
   .about__hero:first-of-type{
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: left;
+    margin-bottom: 20px;
   }
+
+  /* Skjul hero-bilder på mobil */
   .about__hero__media{
-    width: min(90vw, 420px);
+    display: none;
   }
-  /* på mobil stakkes det lille bildet under det store */
-  .about__hero__media .img-secondary{
-    position: static;
-    width: 60%;
-    margin: 16px auto 0;
+
+  /* Vis mobilkopien nederst (du legger HTML-blokken under Experience) */
+  .mobile-bottom-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .mobile-bottom-images .img-main,
+  .mobile-bottom-images .img-secondary{
+    width: 48%;
+  }
+  .mobile-bottom-images img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
   }
 }
 
@@ -1185,8 +1221,16 @@ a:focus {
   .about__me{ flex-direction: column; align-items: flex-start; }
   .about__hero__i{ inline-size: clamp(35ch, 40vw, 120ch); }
   .about__me .about__me__media{ width: 100%; }
-}
 
+  /* På veldig smale skjermer kan vi la dem bryte på to linjer hvis ønskelig */
+  .mobile-bottom-images{
+    flex-wrap: wrap;
+  }
+  .mobile-bottom-images .img-main,
+  .mobile-bottom-images .img-secondary{
+    width: 70%;
+  }
+}
 /* screen-reader only text */
 .sr-only{
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
